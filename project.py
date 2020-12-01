@@ -3,6 +3,11 @@
 import csv
 import sys
 
+#### Global Variable 
+
+
+
+
 def main():
     menu()
     
@@ -40,7 +45,7 @@ def menu():
         
 def read():
     student_file = open('grades.csv', "r")
-    print("Check")
+
 ##def s_report():
 
 ##def s_charts():
