@@ -41,11 +41,39 @@ def menu():
 def read():
     student_file = open('grades.csv', "r")
     print("Check")
-##def s_report():
+    
+def s_report():
+    uin = input("Please enter the UIN of the student you would like to general a report for: ")
+    #e_mean = 
+    #l_mean = 
+    #q_mean = 
+    #r_mean = 
+    #score = 
+    #grade = 
+    print("Exam mean: ")
+    print("Labs mean: ")
+    print("Quizzes mean: ")
+    print("Reading activties mean: ")
+    print("Score: ")
+    print("Letter grade: ")
+    pass
 
 ##def s_charts():
 
-###def c_report():
+def c_report():
+    #tot = 
+    #min = 
+    #max = 
+    #med = 
+    #mean = 
+    #std = 
+    print("Total numebr of students: ")
+    print("Minimum score: ")
+    print("Maximum score: ")
+    print("Medium score: ")
+    print("Mean score: ")
+    print("Standard deviation: ")
+    pass
 
 ##def c_charts():
 
