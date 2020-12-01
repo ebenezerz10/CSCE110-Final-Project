@@ -5,9 +5,6 @@ import sys
 
 #### Global Variable 
 
-
-
-
 def main():
     menu()
     
@@ -15,6 +12,7 @@ def menu():
     print("*******************Main Menu*****************")
     print("1. Read CSV file of grades")
     print("2. Generate student report file")
+    print("3. Generate student report charts")
     print("4. Generate class report file")
     print("5. Generate class report charts")
     print("6. Quit")
@@ -28,7 +26,6 @@ def menu():
         #read csv file code
     elif choice == "2" or choice == "2.":
         s_report()
-        #n
     elif choice == "3" or choice == "3.":
         s_charts()   
     elif choice == "4" or choice == "4.":
@@ -60,8 +57,7 @@ def s_report():
     print("Reading activties mean: ")
     print("Score: ")
     print("Letter grade: ")
-    pass
-
+    
 ##def s_charts():
 
 def c_report():
@@ -77,7 +73,7 @@ def c_report():
     print("Medium score: ")
     print("Mean score: ")
     print("Standard deviation: ")
-    pass
+    
 
 ##def c_charts():
 
