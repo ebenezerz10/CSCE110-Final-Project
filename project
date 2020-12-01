@@ -38,14 +38,44 @@ def menu():
         print("Please try again")
         menu()
         
-def read()
+def read():
+    pass
 
-def s_report()
+def s_report():
+    #e_mean = 
+    #l_mean = 
+    #q_mean = 
+    #r_mean = 
+    #score = 
+    #grade = 
+    print("Exam mean: ")
+    print("Labs mean: ")
+    print("Quizzes mean: ")
+    print("Reading activties mean: ")
+    print("Score: ")
+    print("Letter grade: ")
+    pass
 
-def s_charts()
+def s_charts():
+    pass
 
-def c_report()
+def c_report():
+    #tot = 
+    #min = 
+    #max = 
+    #med = 
+    #mean = 
+    #std = 
+    print("Total numebr of students: ")
+    print("Minimum score: ")
+    print("Maximum score: ")
+    print("Medium score: ")
+    print("Mean score: ")
+    print("Standard deviation: ")
+    pass
 
-def c_charts()
+def c_charts():
+    pass
 
 main()
+    
