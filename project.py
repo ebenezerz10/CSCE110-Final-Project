@@ -21,16 +21,16 @@ def menu():
         read()
         #Eb
         #read csv file code
-    if choice == "2" or choice == "2.":
+    elif choice == "2" or choice == "2.":
         s_report()
         #n
-    if choice == "3" or choice == "3.":
+    elif choice == "3" or choice == "3.":
         s_charts()   
-    if choice == "4" or choice == "4.":
+    elif choice == "4" or choice == "4.":
         c_report()   
-    if choice == "5" or choice == "5.":
+    elif choice == "5" or choice == "5.":
         c_charts()     
-    if choice == "6" or choice == "6.":
+    elif choice == "6" or choice == "6.":
         sys.exit
         #we might want to chose another option
     else: 
@@ -40,6 +40,7 @@ def menu():
         
 def read():
     student_file = open('grades.csv', "r")
+    print("Check")
 ##def s_report():
 
 ##def s_charts():
