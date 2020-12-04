@@ -2,6 +2,7 @@
 
 import csv
 import sys
+import pandas as pd
 
 #### Global Variable 
 
@@ -42,7 +43,8 @@ def menu():
         
 def read():
     student_file = open('grades.csv', "r")
-
+    f = pd.read_cvs('grades.csv')
+    print(f.head())
 def s_report():
     uin = input("Please enter the UIN of the student you would like to general a report for: ")
     #e_mean = 
