@@ -2,6 +2,7 @@
 
 import csv
 import sys
+import os
 #import numpy as np
 #import pandas as pd
 
@@ -15,6 +16,7 @@ score = []
 grade = []
 counter = 0
 project = []
+student_report= []
 
 def main():
     menu()
@@ -55,15 +57,20 @@ def read():
     with open ('grades.csv','rt') as f:
         data = csv.reader(f)  # reads file
         next(data, None)
-        for row in data:  #### indexes data 
+        for row in data:
+            student_report = row[0:23]
+            print(student_report)  
             uin = row[0]
-            print(uin)
             lab_m = row[1:7]
             quiz_m = row[6:13]
             ra_m = row[12:19]
             exam_m = row[18:22]
             project = row [22:23]
             #print()
+            txt = open("UIN.txt","w+")
+            txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
+        
+        
 
             
 
