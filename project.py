@@ -2,9 +2,19 @@
 
 import csv
 import sys
-import pandas as pd
+#import numpy as np
+#import pandas as pd
 
 #### Global Variable 
+uin = []
+lab_m = []
+exam_m = []
+quiz_m = []
+ra_m = []
+score = []
+grade = []
+counter = 0
+project = []
 
 def main():
     menu()
@@ -42,9 +52,21 @@ def menu():
         menu()
         
 def read():
-    student_file = open('grades.csv', "r")
-    f = pd.read_cvs('grades.csv')
-    print(f.head())
+    with open ('grades.csv','rt') as f:
+        data = csv.reader(f)  # reads file
+        next(data, None)
+        for row in data:  #### indexes data 
+            uin = row[0]
+            print(uin)
+            lab_m = row[1:7]
+            quiz_m = row[6:13]
+            ra_m = row[12:19]
+            exam_m = row[18:22]
+            project = row [22:23]
+            #print()
+
+            
+
 def s_report():
     uin = input("Please enter the UIN of the student you would like to general a report for: ")
     #e_mean = 
