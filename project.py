@@ -4,7 +4,6 @@ import csv
 import sys
 import os
 import pathlib
-import pandas
 
 # Global Variable 
 uin = []
@@ -54,26 +53,25 @@ def menu():
         menu()
         
 def read():
-    path = input("Please enter the path and name of your CSV file:")
-    data = pandas.read_csv(path)
-    print(data)
+    data = input("Please enter the path and name of your CSV file: ")
     
-    #with open ('grades.csv','rt') as f:
-        #data = csv.reader(f)  # reads file
-        #next(data, None)
-        #for row in data:
-            #student_report = row[0:23]
-            #print(student_report)  
-            #uin = row[0]
-            #lab_m = row[1:7]
-            #quiz_m = row[6:13]
-            #ra_m = row[12:19]
-            #exam_m = row[18:22]
-            #project = row [22:23]
-            #print()  
+    with open (data) as f:
+        data = csv.reader(f)  # reads file
+        next(data, None)
+        for row in data:
+            student_report = row[0:23]
+            print(student_report)  
+            uin = row[0]
+            lab_m = row[1:7]
+            quiz_m = row[6:13]
+            ra_m = row[12:19]
+            exam_m = row[18:22]
+            project = row [22:23]
+            print()
+            menu()
             
 def s_report():
-    #student = input("Please enter the UIN of the student you would like to general a report for: ") 
+    student = input("Please enter the UIN of the student you would like to general a report for: ") 
     #we need an error message for this 
     print("Labs mean: ")
     print("Quizzes mean: ")
