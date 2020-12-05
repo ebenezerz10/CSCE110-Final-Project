@@ -74,8 +74,9 @@ def read():
 def s_report():
     student = input("Please enter the UIN of the student you would like to general a report for: ") 
     #we need an error message for this
-    #txt = open("UIN.txt","w+")
-    #txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\nScore: {}\nLetter Grade: {}\n".format(exam_m,lab_m,quiz_m,ra_m,score,l_grade))
+    txt = open("UIN.txt","w+")
+    txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
+    #need to add score and letter grade
     main()
     
 
