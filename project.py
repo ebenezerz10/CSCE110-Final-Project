@@ -70,7 +70,9 @@ def read():
             ra_m = row[12:19]
             exam_m = row[18:22]
             project = row [22:23]
-            print()
+            res = [int(float(i)) for i in lab_m]
+            lab_f = sum(res)/len(res)
+            print(round(lab_f,1))
     return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project
 menu()
 
@@ -83,7 +85,11 @@ def s_report():
             break
         else:
             print("This is not valid")
-        student = int(input("Please enter the UIN of the student you would like to general a report for: ")) 
+            student = input("Please enter the UIN of the student you would like to general a report for: ") 
+    if student in uin:
+        print('yes')
+    else:
+        print('no')
     txt = open(f"{student}.txt","w+")
     txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
     #need to add score and letter grade
