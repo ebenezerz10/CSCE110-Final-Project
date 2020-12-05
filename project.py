@@ -6,7 +6,7 @@ import os
 #import numpy as np
 #import pandas as pd
 
-#### Global Variable 
+# Global Variable 
 uin = []
 lab_m = []
 exam_m = []
