@@ -54,8 +54,9 @@ def menu():
         
 def read():
     data = input("Please enter the path and name of your CSV file: ")
-    #noah's path (don't delete)
+    #noah's path 
     #C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
+    #eb's path 
     #C:\Users\ebenezerz10\Documents\GitHub\CSCE110-Final-Project
     with open (data) as f:
         data = csv.reader(f)  # reads file
@@ -78,7 +79,7 @@ def s_report():
     while True:
         student = input("Please enter the UIN of the student you would like to general a report for: ")
         if student.isdigit() and len(student) == 10:
-            print("This is  a valid UIN") 
+            print("This is a valid UIN") 
             break
         else:
             print("This is not valid")
@@ -86,6 +87,7 @@ def s_report():
     txt = open(f"{student}.txt","w+")
     txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
     #need to add score and letter grade
+    #close file
     main()
     
 
