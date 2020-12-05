@@ -93,7 +93,7 @@ def s_report():
     txt = open(f"{student}.txt","w+")
     txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
     #need to add score and letter grade
-    #close file
+    txt.close
     main()
     
 
