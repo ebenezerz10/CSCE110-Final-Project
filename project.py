@@ -84,7 +84,7 @@ def s_report():
             print("Score: ")
             print("Letter grade: ")
              """
-            txt = open("UIN.txt","w+")
+            txt = open(f"{i}.txt","w+")
             txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
 
 ##def s_charts():
