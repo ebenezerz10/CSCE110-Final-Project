@@ -54,6 +54,10 @@ def menu():
         menu()
         
 def read():
+    
+            
+def s_report():
+    i = input("Please enter the UIN of the student you would like to general a report for: ")
     with open ('grades.csv','rt') as f:
         data = csv.reader(f)  # reads file
         next(data, None)
@@ -66,29 +70,16 @@ def read():
             ra_m = row[12:19]
             exam_m = row[18:22]
             project = row [22:23]
-            #print()
-            txt = open("UIN.txt","w+")
-            txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
-        
-        
-
-            
-
-def s_report():
-    uin = input("Please enter the UIN of the student you would like to general a report for: ")
-    #e_mean = 
-    #l_mean = 
-    #q_mean = 
-    #r_mean = 
-    #score = 
-    #grade = 
-    print("Exam mean: ")
+            #print() ")
     print("Labs mean: ")
     print("Quizzes mean: ")
     print("Reading activties mean: ")
     print("Score: ")
     print("Letter grade: ")
     
+    txt = open("UIN.txt","w+")
+    txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
+
 ##def s_charts():
 
 def c_report():
