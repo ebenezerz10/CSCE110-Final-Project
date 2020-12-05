@@ -61,7 +61,7 @@ def read():
         next(data, None)
         for row in data:
             student_report = row[0:23]
-            print(student_report)  
+            #print(student_report)  
             uin = row[0]
             lab_m = row[1:7]
             quiz_m = row[6:13]
@@ -69,12 +69,20 @@ def read():
             exam_m = row[18:22]
             project = row [22:23]
             print()
-            menu()
+    return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project
+    menu()
+
             
 def s_report():
-    student = input("Please enter the UIN of the student you would like to general a report for: ") 
-    #we need an error message for this
-    txt = open("UIN.txt","w+")
+    while True:
+        student = input("Please enter the UIN of the student you would like to general a report for: ")
+        if student.isdigit() and len(student) == 10:
+            print("This is  a valid UIN") 
+            break
+        else:
+            print("This is not valid")
+        student = int(input("Please enter the UIN of the student you would like to general a report for: ")) 
+    txt = open(f"{student}.txt","w+")
     txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
     #need to add score and letter grade
     main()
