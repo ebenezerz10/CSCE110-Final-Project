@@ -53,17 +53,23 @@ def menu():
         print("Please try again")
         menu()
         
-def read():
-    
+#def read():
+     
             
 def s_report():
-    i = input("Please enter the UIN of the student you would like to general a report for: ")
+    while True:
+        i = input("Please enter the UIN of the student you would like to general a report for: ")
+        if i.isdigit() and len(i) == 10:
+            print("This is  a valid UIN")
+            break
+        else:
+            print("This is not valid")
+            i = input("Please enter the UIN of the student you would like to general a report for: ")
     with open ('grades.csv','rt') as f:
         data = csv.reader(f)  # reads file
         next(data, None)
         for row in data:
             student_report = row[0:23]
-            print(student_report)  
             uin = row[0]
             lab_m = row[1:7]
             quiz_m = row[6:13]
@@ -71,14 +77,15 @@ def s_report():
             exam_m = row[18:22]
             project = row [22:23]
             #print()
-    print("Labs mean: ")
-    print("Quizzes mean: ")
-    print("Reading activties mean: ")
-    print("Score: ")
-    print("Letter grade: ")
-    
-    txt = open("UIN.txt","w+")
-    txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
+            """ 
+            print("Labs mean: ")
+            print("Quizzes mean: ")
+            print("Reading activties mean: ")
+            print("Score: ")
+            print("Letter grade: ")
+             """
+            txt = open("UIN.txt","w+")
+            txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
 
 ##def s_charts():
 
