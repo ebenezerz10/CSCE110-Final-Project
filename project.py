@@ -3,8 +3,7 @@
 import csv
 import sys
 import os
-#import numpy as np
-#import pandas as pd
+import pathlib
 
 # Global Variable 
 uin = []
@@ -53,46 +52,36 @@ def menu():
         print("Please try again")
         menu()
         
-#def read():
-     
-            
-def s_report():
-    with open ('grades.csv','rt') as f:
+def read():
+    data = input("Please enter the path and name of your CSV file: ")
+    #noah's path (don't delete)
+    #C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
+    with open (data) as f:
         data = csv.reader(f)  # reads file
         next(data, None)
         for row in data:
             student_report = row[0:23]
+            print(student_report)  
             uin = row[0]
             lab_m = row[1:7]
-            print(lab_m)
             quiz_m = row[6:13]
             ra_m = row[12:19]
             exam_m = row[18:22]
             project = row [22:23]
-            ## calculating mean
-            res = [int(float(i)) for i in lab_m]
-            lab_f = sum(res)/len(res)
-            print(round(lab_f,1))
-    while True:
-        i = input("Please enter the UIN of the student you would like to general a report for: ")
-        if i.isdigit() and len(i) == 10:
-            print("This is  a valid UIN") 
-            break
-        else:
-            print("This is not valid")
-        i = int(input("Please enter the UIN of the student you would like to general a report for: "))
-           
-            """ 
-            print("Labs mean: ")
-            print("Quizzes mean: ")
-            print("Reading activties mean: ")
-            print("Score: ")
-            print("Letter grade: ")
-             """
-            #txt = open(f"{i}.txt","w+")
-            #txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
+            print()
+            menu()
+            
+def s_report():
+    student = input("Please enter the UIN of the student you would like to general a report for: ") 
+    #we need an error message for this
+    txt = open("UIN.txt","w+")
+    txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
+    #need to add score and letter grade
+    main()
+    
 
-##def s_charts():
+def s_charts():
+    pass
 
 def c_report():
     #tot = 
@@ -109,6 +98,7 @@ def c_report():
     print("Standard deviation: ")
     
 
-##def c_charts():
+def c_charts():
+    pass
 
 main()
