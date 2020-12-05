@@ -56,6 +56,7 @@ def read():
     data = input("Please enter the path and name of your CSV file: ")
     #noah's path (don't delete)
     #C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
+    #C:\Users\ebenezerz10\Documents\GitHub\CSCE110-Final-Project
     with open (data) as f:
         data = csv.reader(f)  # reads file
         next(data, None)
@@ -70,7 +71,7 @@ def read():
             project = row [22:23]
             print()
     return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project
-    menu()
+menu()
 
             
 def s_report():
