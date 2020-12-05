@@ -70,7 +70,7 @@ def s_report():
             ra_m = row[12:19]
             exam_m = row[18:22]
             project = row [22:23]
-            #print() ")
+            #print()
     print("Labs mean: ")
     print("Quizzes mean: ")
     print("Reading activties mean: ")
