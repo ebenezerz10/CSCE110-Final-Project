@@ -89,7 +89,7 @@ def read():
             project = row [22:23]
             res = [int(float(i)) for i in lab_m]
             lab_f = sum(res)/len(res)
-            print(round(lab_f,1))
+            #print(round(lab_f,1))
     return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f
         
 def s_report():
@@ -109,6 +109,7 @@ def s_report():
     
 def s_charts():
     pass
+
 
 
 def c_report():
