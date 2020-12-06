@@ -50,6 +50,7 @@ def menu():
         menu()
         
 def read():
+    global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f
     data = input("Please enter the path and name of your CSV file: ")
     #noah's path 
     #C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
@@ -70,9 +71,7 @@ def read():
             res = [int(float(i)) for i in lab_m]
             lab_f = sum(res)/len(res)
             #print(round(lab_f,1))
-    return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f
-    
-    is_there_data == 1
+    main()
         
 def s_report():
     while True:
@@ -85,7 +84,7 @@ def s_report():
             print("This is not valid")
             student = input("Please enter the UIN of the student you would like to general a report for: ") 
     txt = open(f"{student}.txt","w+")
-    txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
+    txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_f,quiz_m,ra_m))
     print("Your report has been created as a .txt file")
     #need to add score and letter grade
     txt.close
