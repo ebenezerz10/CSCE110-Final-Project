@@ -16,6 +16,8 @@ grade = []
 counter = 0
 project = []
 student_report= []
+global is_there_data
+is_there_data = 0 
 
 def main():
     menu()
@@ -29,47 +31,27 @@ def menu():
     print("5. Generate class report charts")
     print("6. Quit")
     print("************************************************")
-    
     choice = input("Please chose your option: ")
-    is_there_data = 0
+    
     if choice == "1" or choice == "1.":
-        is_there_data == 1
         read()
-        main()
     elif choice == "2" or choice == "2.":
-        if is_there_data == 1:
-            s_report()
-        else: 
-            print("No CSV file has been read")
-            main()
+        s_report()
     elif choice == "3" or choice == "3.":
-        if is_there_data == 1:
-            s_charts()  
-        else:
-            print("No CSV file has been read")
-            main()
+        s_charts()  
     elif choice == "4" or choice == "4.":
-        if is_there_data == 1:
-            c_report()   
-        else: 
-            print("No CSV file has been read")
-            main()  
+        c_report()   
     elif choice == "5" or choice == "5.":
-        if is_there_data == 1:
-            c_charts()   
-        else: 
-            print("No CSV file has been read")  
-            main()   
+        c_charts()   
     elif choice == "6" or choice == "6." or choice == "q" or choice == "quit":
         sys.exit 
         #we might change this to break
     else: 
         print("You must select an option 1-6")
         print("Please try again")
-        main()
+        menu()
         
 def read():
-    is_there_data = 1
     data = input("Please enter the path and name of your CSV file: ")
     #noah's path 
     #C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
@@ -91,6 +73,8 @@ def read():
             lab_f = sum(res)/len(res)
             #print(round(lab_f,1))
     return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f
+    
+    is_there_data == 1
         
 def s_report():
     while True:
