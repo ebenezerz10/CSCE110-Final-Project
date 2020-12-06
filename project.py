@@ -43,7 +43,7 @@ def menu():
     elif choice == "5" or choice == "5.":
         c_charts()     
     elif choice == "6" or choice == "6." or choice == "q" or choice == "quit":
-        sys.exit
+        sys.exit #we might change this to break
     else: 
         print("You must select an option 1-6")
         print("Please try again")
