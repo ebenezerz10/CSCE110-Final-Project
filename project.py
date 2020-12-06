@@ -64,6 +64,7 @@ def menu():
         menu()
         
 def read():
+    is_there_data = 1
     data = input("Please enter the path and name of your CSV file: ")
     #noah's path 
     #C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
@@ -85,7 +86,7 @@ def read():
             lab_f = sum(res)/len(res)
             print(round(lab_f,1))
     return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f 
-menu()
+main()
         
 def s_report():
     while True:
