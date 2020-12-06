@@ -31,19 +31,33 @@ def menu():
     print("************************************************")
     
     choice = input("Please chose your option: ")
-    
+    is_there_data = 0
     if choice == "1" or choice == "1.":
+        is_there_data == 1
         read()
     elif choice == "2" or choice == "2.":
-        s_report()
+        if is_there_data == 1:
+            s_report()
+        else: 
+            print("No CSV file has been read")
     elif choice == "3" or choice == "3.":
-        s_charts()   
+        if is_there_data == 1:
+            s_charts()  
+        else:
+            print("No CSV file has been read")
     elif choice == "4" or choice == "4.":
-        c_report()   
+        if is_there_data == 1:
+            c_report()   
+        else: 
+            print("No CSV file has been read")  
     elif choice == "5" or choice == "5.":
-        c_charts()     
+        if is_there_data == 1:
+            c_charts()   
+        else: 
+            print("No CSV file has been read")     
     elif choice == "6" or choice == "6." or choice == "q" or choice == "quit":
-        sys.exit #we might change this to break
+        sys.exit 
+        #we might change this to break
     else: 
         print("You must select an option 1-6")
         print("Please try again")
