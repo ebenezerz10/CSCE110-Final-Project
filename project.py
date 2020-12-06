@@ -73,10 +73,9 @@ def read():
             res = [int(float(i)) for i in lab_m]
             lab_f = sum(res)/len(res)
             print(round(lab_f,1))
-    return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project
+    return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f 
 menu()
-
-            
+        
 def s_report():
     while True:
         student = input("Please enter the UIN of the student you would like to general a report for: ")
