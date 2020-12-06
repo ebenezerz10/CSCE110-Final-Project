@@ -35,33 +35,38 @@ def menu():
     if choice == "1" or choice == "1.":
         is_there_data == 1
         read()
+        main()
     elif choice == "2" or choice == "2.":
         if is_there_data == 1:
             s_report()
         else: 
             print("No CSV file has been read")
+            main()
     elif choice == "3" or choice == "3.":
         if is_there_data == 1:
             s_charts()  
         else:
             print("No CSV file has been read")
+            main()
     elif choice == "4" or choice == "4.":
         if is_there_data == 1:
             c_report()   
         else: 
-            print("No CSV file has been read")  
+            print("No CSV file has been read")
+            main()  
     elif choice == "5" or choice == "5.":
         if is_there_data == 1:
             c_charts()   
         else: 
-            print("No CSV file has been read")     
+            print("No CSV file has been read")  
+            main()   
     elif choice == "6" or choice == "6." or choice == "q" or choice == "quit":
         sys.exit 
         #we might change this to break
     else: 
         print("You must select an option 1-6")
         print("Please try again")
-        menu()
+        main()
         
 def read():
     is_there_data = 1
@@ -85,8 +90,7 @@ def read():
             res = [int(float(i)) for i in lab_m]
             lab_f = sum(res)/len(res)
             print(round(lab_f,1))
-    return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f 
-main()
+    return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f
         
 def s_report():
     while True:
@@ -102,10 +106,10 @@ def s_report():
     txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
     #need to add score and letter grade
     txt.close
-    main()
     
 def s_charts():
     pass
+
 
 def c_report():
     #tot = 
@@ -120,6 +124,7 @@ def c_report():
     print("Medium score: ")
     print("Mean score: ")
     print("Standard deviation: ")
+    pass
     
 
 def c_charts():
