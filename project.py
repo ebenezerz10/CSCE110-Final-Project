@@ -16,8 +16,6 @@ grade = []
 counter = 0
 project = []
 student_report= []
-global is_there_data
-is_there_data = 0 
 
 def main():
     menu()
@@ -88,13 +86,12 @@ def s_report():
             student = input("Please enter the UIN of the student you would like to general a report for: ") 
     txt = open(f"{student}.txt","w+")
     txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_m,quiz_m,ra_m))
+    print("Your report has been created as a .txt file")
     #need to add score and letter grade
     txt.close
     
 def s_charts():
     pass
-
-
 
 def c_report():
     #tot = 
