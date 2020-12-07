@@ -68,11 +68,11 @@ def read():
             student_report = row[0:23]
             #print(student_report)  
             uin.append(row[0])
-            lab_m = row[1:7]
-            quiz_m = row[6:13]
-            ra_m = row[12:19]
-            exam_m = row[18:22]
-            project = row [22:23]
+            lab_m.append(row[1:7])
+            quiz_m.append(row[6:13])
+            ra_m.append(row[12:19])
+            exam_m.append(row[18:22])
+            project.append(row [22:23])
             res = [int(float(i)) for i in lab_m]
             lab_f = sum(res)/len(res)
             #print(round(lab_f,1))
