@@ -54,7 +54,7 @@ def menu():
         menu()
         
 def read():
-    global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project
+    global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, counter
     data = input("Please enter the path and name of your CSV file: ")
     #noah's path 
     #C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
@@ -64,6 +64,7 @@ def read():
         data_read = csv.reader(f)  # reads file
         next(data_read, None)
         for row in data_read:
+            counter += 1
             student_report.append(row[0:23])
             uin.append(row[0])
             lab_m.append(row[1:7])
@@ -72,9 +73,10 @@ def read():
             exam_m.append(row[18:22])
             project.append(row [22:23])
         menu()
-        return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project     
+        return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, counter    
        
 def s_report():
+    global student
     student = input("Please enter the UIN of the student you would like to general a report for: ")
     if student in uin:
         print("This is a valid UIN")
@@ -106,19 +108,16 @@ def s_report():
                 reading_total = reading_total + thisGrade
                 total = total + reading_total * .1
                 reading_mean = reading_total / 6
-
             for index in range(19,22):
                 thisGrade = float(row[index])
                 exam_total = exam_total + thisGrade
                 total = total + exam_total * .45
                 exam_mean = exam_total / 3
-
             for index in range(23):
                 thisGrade = float(row[index])
                 project_total = project_total + thisGrade
                 total = total + project_total * .1
-            
-            print(total)
+
             total = total / 10
             total = round(total, 1)
             exam_mean = round(exam_mean, 1)
@@ -139,6 +138,7 @@ def s_report():
             #txt.write(total, lab_total, quiz_total, reading_total, exam_total, project_total)
             txt.close
             print("Your report has been created as a .txt file")
+    return student
     #need to add score and letter grade
 """    
 def s_charts():
@@ -211,18 +211,23 @@ def s_charts():
                 plt.clf()
 """ 
 def c_report():
-    #tot = 
+    for row in student_report:
+        row = row[19:22]
+        thisGrade = float(row)
+        exam_total = exam_total + thisGrade
+        exam_mean = exam_total / 3
+        print(exam_mean)
     #min = 
     #max = 
     #med = 
     #mean = 
-    #std = 
-    print("Total numebr of students: ")
-    print("Minimum score: ")
-    print("Maximum score: ")
-    print("Medium score: ")
-    print("Mean score: ")
-    print("Standard deviation: ")
+    #std =
+    print("Total numebr of students: {}".format(counter))
+    print("Minimum score: {}")
+    print("Maximum score: {}")
+    print("Medium score: {}")
+    print("Mean score: {}")
+    print("Standard deviation: {}")
     pass
     
 
