@@ -216,18 +216,27 @@ def s_charts():
     menu()
 
 def c_report():
-    # tot =
-    # min =
-    # max =
-    # med =
-    # mean =
-    # std =
-    print("Total number of students: ")
-    print("Minimum score: ")
-    print("Maximum score: ")
-    print("Medium score: ")
-    print("Mean score: ")
-    print("Standard deviation: ")
+    for num in exam_m:
+        total = 0
+        exam_t = [int(float(i)) for i in num]
+        sum_exam = sum(exam_t)
+        exam_mean = sum_exam / 3
+        exam_mean = round(exam_mean,1)
+        print(exam_mean)
+        min_exam = min(exam_mean)
+        print(min_exam)
+        max_exam = max(exam_t)
+        print(max_exam)
+
+    #med = 
+    #mean = 
+    #std =
+    print("Total numebr of students: {}".format(counter))
+    print("Minimum score: {}")
+    print("Maximum score: {}")
+    print("Medium score: {}")
+    print("Mean score: {}")
+    print("Standard deviation: {}")
     pass
 
 
