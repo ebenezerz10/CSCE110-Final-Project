@@ -71,13 +71,15 @@ def read():
             res = [int(float(i)) for i in lab_m]
             lab_f = sum(res)/len(res)
             #print(round(lab_f,1))
-    main()
+            menu()
+            return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f
         
 def s_report():
     while True:
+        print("practice print of uin", student_report)
         student = input("Please enter the UIN of the student you would like to general a report for: ")
         if student.isdigit() and len(student) == 10:
-            print("This is a valid UIN") 
+            print("This is a valid UIN")
             break
         #add to make sure it checks to see if the UIN is in the data
         else:
@@ -111,4 +113,5 @@ def c_report():
 def c_charts():
     pass
 
-main()
+menu()
+print(student_report)
