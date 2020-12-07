@@ -4,9 +4,8 @@ import csv
 import sys
 import os
 import pathlib
-import matplotlib.pyplot as plt; plt.rcdefaults()
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Global Variable 
 uin = []
@@ -20,7 +19,6 @@ counter = 0
 project = []
 student_report= []
 
-import os
 print("PYTHONPATH:", os.environ.get('PYTHONPATH'))
 print("PATH:", os.environ.get('PATH'))
 
@@ -152,26 +150,57 @@ def s_charts():
             if not os.path.exists(uin_directory):
                 os.makedirs(uin_directory)
             #bar chart of labs
-            x_label = ('Lab 1', 'Lab 2', 'Lab 3','Lab 4','Lab 5','Lab 6')
-            y_amount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
-            y_pos = np.arrange(len(x_label))
-            plt.bar(y_pos, y_amount, align='center', alpha=0.5)
-            plt.xticks(y_pos, x_label)
-            plt.ylabel('Grade')
-            plt.xlabel('Lab Assignments')
-            plt.title('Bar chart of labs')
-            plt.savefig(f"{student}.png","w+")
             for index in range(7,12):
-                thisGrade = float(row[index])
+                y_amount = []
+                x_label = ('Lab 1', 'Lab 2', 'Lab 3','Lab 4','Lab 5','Lab 6')
+                y_amount.append(index)
+                y_pos = np.arrange(len(x_label))
+                plt.bar(y_pos, y_amount, align='center', alpha=0.5)
+                plt.xticks(y_pos, x_label)
+                plt.ylabel('Grade')
+                plt.xlabel('Lab Assignments')
+                plt.title('Bar chart of labs')
+                plt.show(f"{student}.png","w+")
+                plt.savefig(f"{student}.png","w+")
             #bar chart of quizzes
             for index in range(13,19):
-                thisGrade = float(row[index])
+                y_amount = []
+                x_label = ('Quiz 1', 'Quiz 2', 'Quiz 3','Quiz 4','Quiz 5','Quiz 6')
+                y_amount.append(index)
+                y_pos = np.arrange(len(x_label))
+                plt.bar(y_pos, y_amount, align='center', alpha=0.5)
+                plt.xticks(y_pos, x_label)
+                plt.ylabel('Grade')
+                plt.xlabel('Quiz Assignments')
+                plt.title('Bar chart of quizs')
+                plt.show(f"{student}.png","w+")
+                plt.savefig(f"{student}.png","w+")
             #bar chart of reading activties
             for index in range(20,22):
-                thisGrade = float(row[index])
+                y_amount = []
+                x_label = ('RA 1', 'RA 2', 'RA 3','RA 4','RA 5','RA 6')
+                y_amount.append(index)
+                y_pos = np.arrange(len(x_label))
+                plt.bar(y_pos, y_amount, align='center', alpha=0.5)
+                plt.xticks(y_pos, x_label)
+                plt.ylabel('Grade')
+                plt.xlabel('Reading Activities')
+                plt.title('Bar chart of reading activties')
+                plt.show(f"{student}.png","w+")
+                plt.savefig(f"{student}.png","w+")
             #bar chart of exams
             for index in range(20,22):
-                thisGrade = float(row[index])
+                y_amount = []
+                x_label = ('Exam 1', 'Exam 2', 'Exam 3')
+                y_amount.append(index)
+                y_pos = np.arrange(len(x_label))
+                plt.bar(y_pos, y_amount, align='center', alpha=0.5)
+                plt.xticks(y_pos, x_label)
+                plt.ylabel('Grade')
+                plt.xlabel('Exam Number')
+                plt.title('Bar chart of exam grades')
+                plt.show(f"{student}.png","w+")
+                plt.savefig(f"{student}.png","w+")
 
 def c_report():
     #tot = 
