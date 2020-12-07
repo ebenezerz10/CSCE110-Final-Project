@@ -71,12 +71,13 @@ def read():
             res = [int(float(i)) for i in lab_m]
             lab_f = sum(res)/len(res)
             #print(round(lab_f,1))
-            menu()
-            return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f
+        menu()
+        return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f
         
 def s_report():
     while True:
-        print("practice print of uin", student_report)
+        print("practice print of the student_report", student_report)
+        print("practice print of uin", uin)
         student = input("Please enter the UIN of the student you would like to general a report for: ")
         if student.isdigit() and len(student) == 10:
             print("This is a valid UIN")
