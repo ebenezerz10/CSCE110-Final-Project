@@ -49,10 +49,10 @@ def menu():
         menu()
         
 def read():
-    global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f
+    global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project
     data = input("Please enter the path and name of your CSV file: ")
     #noah's path 
-    #
+    #C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
     #eb's path 
     #C:\Users\ebenezerz10\Documents\GitHub\CSCE110-Final-Project
     with open (data) as f:
@@ -79,7 +79,7 @@ def s_report():
     print("Text file opened")
     for row in student_report:
         if student == row[0]:
-            uin_for_row = row[0]
+            #uin_for_row = row[0]
             total = 0
             lab_total = 0
             quiz_total = 0
@@ -90,26 +90,45 @@ def s_report():
                 thisGrade = float(row[index])
                 lab_total = lab_total + thisGrade
                 total = total + lab_total * .25
+                lab_mean = lab_total / 6
             for index in range(7,12):
                 thisGrade = float(row[index])
                 quiz_total = quiz_total + thisGrade
                 total = total + quiz_total * .1
+                quiz_mean = quiz_total / 6
             for index in range(13,19):
                 thisGrade = float(row[index])
                 reading_total = reading_total + thisGrade
                 total = total + reading_total * .1
+                reading_mean = reading_total / 6
             for index in range(20,22):
                 thisGrade = float(row[index])
                 exam_total = exam_total + thisGrade
                 total = total + exam_total * .45
+                exam_mean = exam_total / 3
             for index in range(20,22):
                 thisGrade = float(row[index])
                 project_total = project_total + thisGrade
                 total = total + project_total * .1
-            txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(total, lab_total, quiz_total, reading_total))	           
+            total = total / 10
+            total = round(total, 1)
+            exam_mean = round(exam_mean, 1)
+            lab_mean = round(lab_mean, 1)
+            quiz_mean = round(quiz_mean, 1)
+            reading_mean = round(reading_mean, 1)
+            if total >= 90:
+                letter_grade = "A"
+            elif 80 <= total < 90:
+                letter_grade = "B"
+            elif 70 <= total < 80:
+                letter_grade = "C"
+            elif 60 <= total < 70:
+                letter_grade = "D"
+            else:
+                letter_grade = "F"
+            txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\nScore: {}%\nLetter grade: {}\n".format(exam_mean, lab_mean, quiz_mean, reading_mean, total, letter_grade))	           
             #txt.write(total, lab_total, quiz_total, reading_total, exam_total, project_total)
-            txt.close    
-            print(total, lab_total, quiz_total, reading_total, exam_total, project_total)
+            txt.close
             print("Your report has been created as a .txt file")
     #need to add score and letter grade
     
