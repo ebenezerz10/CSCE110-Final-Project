@@ -1,0 +1,4 @@
+Exams mean: 849.3960000000002
+Lab mean: 496.0
+Quizzes mean: 485.0
+Reading activites mean: 497.88

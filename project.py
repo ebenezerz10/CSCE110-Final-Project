@@ -59,8 +59,7 @@ def read():
         data_read = csv.reader(f)  # reads file
         next(data_read, None)
         for row in data_read:
-            student_report = row[0:23]
-            print(student_report)
+            student_report.append(row[0:23])
             uin.append(row[0])
             lab_m.append(row[1:7])
             quiz_m.append(row[6:13])
@@ -68,50 +67,51 @@ def read():
             exam_m.append(row[18:22])
             project.append(row [22:23])
         menu()
-        return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project        
+        return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project     
+       
 def s_report():
-    while True:
-        student = input("Please enter the UIN of the student you would like to general a report for: ")
-        if student in uin:
-            print("This is a valid UIN")
-            break
-        else: 
-            print("This is not valid")
-        txt = open(f"{student}.txt","w+")
-        for row in student_report:
-            if student == row[0]:
-                uin_for_row = row[0]
-                total = 0
-                lab_total = 0
-                quiz_total = 0
-                reading_total = 0
-                exam_total = 0
-                project_total = 0 
-                for index in range(1,6):
-                    thisGrade = float(row[index])
-                    lab_total = lab_total + thisGrade
-                    total = total + lab_total * .25
-                for index in range(7,12):
-                    thisGrade = float(row[index])
-                    quiz_total = quiz_total + thisGrade
-                    total = total + quiz_total * .1
-                for index in range(13,19):
-                    thisGrade = float(row[index])
-                    reading_total = reading_total + thisGrade
-                    total = total + reading_total * .1
-                for index in range(20,22):
-                    thisGrade = float(row[index])
-                    exam_total = exam_total + thisGrade
-                    total = total + exam_total * .45
-                for index in range(20,22):
-                    thisGrade = float(row[index])
-                    project_total = project_total + thisGrade
-                    total = total + project_total * .1	           
-                txt.write(total, lab_total, quiz_total, reading_total, exam_total, project_total)
-                txt.close    
-                print(total, lab_total, quiz_total, reading_total, exam_total, project_total)
-        #need to add score and letter grade
-    print("Your report has been created as a .txt file")
+    student = input("Please enter the UIN of the student you would like to general a report for: ")
+    if student in uin:
+        print("This is a valid UIN")
+    else: 
+        print("This is not valid")
+    txt = open(f"{student}.txt","w+")
+    print("Text file opened")
+    for row in student_report:
+        if student == row[0]:
+            uin_for_row = row[0]
+            total = 0
+            lab_total = 0
+            quiz_total = 0
+            reading_total = 0
+            exam_total = 0
+            project_total = 0 
+            for index in range(1,6):
+                thisGrade = float(row[index])
+                lab_total = lab_total + thisGrade
+                total = total + lab_total * .25
+            for index in range(7,12):
+                thisGrade = float(row[index])
+                quiz_total = quiz_total + thisGrade
+                total = total + quiz_total * .1
+            for index in range(13,19):
+                thisGrade = float(row[index])
+                reading_total = reading_total + thisGrade
+                total = total + reading_total * .1
+            for index in range(20,22):
+                thisGrade = float(row[index])
+                exam_total = exam_total + thisGrade
+                total = total + exam_total * .45
+            for index in range(20,22):
+                thisGrade = float(row[index])
+                project_total = project_total + thisGrade
+                total = total + project_total * .1
+            txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(total, lab_total, quiz_total, reading_total))	           
+            #txt.write(total, lab_total, quiz_total, reading_total, exam_total, project_total)
+            txt.close    
+            print(total, lab_total, quiz_total, reading_total, exam_total, project_total)
+            print("Your report has been created as a .txt file")
+    #need to add score and letter grade
     
 def s_charts():
     pass
