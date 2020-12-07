@@ -4,8 +4,8 @@ import csv
 import sys
 import os
 import pathlib
-import matplotlib.pyplot as plt
-import numpy as np
+#import matplotlib.pyplot as plt
+#import numpy as np
 
 # Global Variable 
 uin = []
@@ -59,7 +59,7 @@ def read():
     #noah's path 
     #C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
     #eb's path 
-    #C:\Users\ebenezerz10\Documents\GitHub\CSCE110-Final-Project
+    #C:\Users\ebenezerz10\Documents\GitHub\CSCE110-Final-Project\grades.csv
     with open (data) as f:
         data_read = csv.reader(f)  # reads file
         next(data_read, None)
@@ -91,12 +91,12 @@ def s_report():
             reading_total = 0
             exam_total = 0
             project_total = 0 
-            for index in range(1,6):
+            for index in range(1,7):
                 thisGrade = float(row[index])
                 lab_total = lab_total + thisGrade
                 total = total + lab_total * .25
                 lab_mean = lab_total / 6
-            for index in range(7,12):
+            for index in range(7,13):
                 thisGrade = float(row[index])
                 quiz_total = quiz_total + thisGrade
                 total = total + quiz_total * .1
@@ -106,15 +106,19 @@ def s_report():
                 reading_total = reading_total + thisGrade
                 total = total + reading_total * .1
                 reading_mean = reading_total / 6
-            for index in range(20,22):
+
+            for index in range(19,22):
                 thisGrade = float(row[index])
                 exam_total = exam_total + thisGrade
                 total = total + exam_total * .45
                 exam_mean = exam_total / 3
+
             for index in range(23):
                 thisGrade = float(row[index])
                 project_total = project_total + thisGrade
                 total = total + project_total * .1
+            
+            print(total)
             total = total / 10
             total = round(total, 1)
             exam_mean = round(exam_mean, 1)
@@ -136,7 +140,7 @@ def s_report():
             txt.close
             print("Your report has been created as a .txt file")
     #need to add score and letter grade
-    
+"""    
 def s_charts():
     student = input("Please enter the UIN of the student you would like to general a report for: ")
     if student in uin:
@@ -205,7 +209,7 @@ def s_charts():
                 plt.show(f"{student}.png","w+")
                 plt.savefig(f"{student}.png","w+")
                 plt.clf()
-
+""" 
 def c_report():
     #tot = 
     #min = 
