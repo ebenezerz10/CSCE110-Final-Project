@@ -4,6 +4,9 @@ import csv
 import sys
 import os
 import pathlib
+import matplotlib.pyplot as plt; plt.rcdefaults()
+import numpy as np
+import matplotlib.pyplot as plt
 
 # Global Variable 
 uin = []
@@ -16,6 +19,10 @@ grade = []
 counter = 0
 project = []
 student_report= []
+
+import os
+print("PYTHONPATH:", os.environ.get('PYTHONPATH'))
+print("PATH:", os.environ.get('PATH'))
 
 def main():
     menu()
@@ -106,7 +113,7 @@ def s_report():
                 exam_total = exam_total + thisGrade
                 total = total + exam_total * .45
                 exam_mean = exam_total / 3
-            for index in range(20,22):
+            for index in range(23):
                 thisGrade = float(row[index])
                 project_total = project_total + thisGrade
                 total = total + project_total * .1
@@ -133,7 +140,38 @@ def s_report():
     #need to add score and letter grade
     
 def s_charts():
-    pass
+    student = input("Please enter the UIN of the student you would like to general a report for: ")
+    if student in uin:
+        print("This is a valid UIN")
+    else: 
+        print("This is not valid")
+    for row in student_report:
+        if student == row[0]:
+            current_directory = os.getcwd()
+            uin_directory = os.path.join(current_directory, r'(f"{student}","w+")')
+            if not os.path.exists(uin_directory):
+                os.makedirs(uin_directory)
+            #bar chart of labs
+            x_label = ('Lab 1', 'Lab 2', 'Lab 3','Lab 4','Lab 5','Lab 6')
+            y_amount = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+            y_pos = np.arrange(len(x_label))
+            plt.bar(y_pos, y_amount, align='center', alpha=0.5)
+            plt.xticks(y_pos, x_label)
+            plt.ylabel('Grade')
+            plt.xlabel('Lab Assignments')
+            plt.title('Bar chart of labs')
+            plt.savefig(f"{student}.png","w+")
+            for index in range(7,12):
+                thisGrade = float(row[index])
+            #bar chart of quizzes
+            for index in range(13,19):
+                thisGrade = float(row[index])
+            #bar chart of reading activties
+            for index in range(20,22):
+                thisGrade = float(row[index])
+            #bar chart of exams
+            for index in range(20,22):
+                thisGrade = float(row[index])
 
 def c_report():
     #tot = 
