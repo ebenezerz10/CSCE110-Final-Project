@@ -57,12 +57,17 @@ def read():
     #eb's path 
     #C:\Users\ebenezerz10\Documents\GitHub\CSCE110-Final-Project
     with open (data) as f:
-        data = csv.reader(f)  # reads file
-        next(data, None)
-        for row in data:
+        data_read = csv.reader(f)  # reads file
+        next(data_read, None)
+        header_line = True
+        for row in data_read:
+            print(row)
+            if header_line:
+                header_line = False
+                continue
             student_report = row[0:23]
             #print(student_report)  
-            uin = row[0]
+            uin.append(row[0])
             lab_m = row[1:7]
             quiz_m = row[6:13]
             ra_m = row[12:19]
@@ -76,10 +81,10 @@ def read():
         
 def s_report():
     while True:
-        print("practice print of the student_report", student_report)
-        print("practice print of uin", uin)
+        #print("practice print of the student_report", student_report)
+        #print("practice print of uin", uin)
         student = input("Please enter the UIN of the student you would like to general a report for: ")
-        if student.isdigit() and len(student) == 10:
+        if student.isdigit() and len(student) == 10 and student in uin:
             print("This is a valid UIN")
             break
         #add to make sure it checks to see if the UIN is in the data
