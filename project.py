@@ -162,6 +162,7 @@ def s_charts():
                 plt.title('Bar chart of labs')
                 plt.show(f"{student}.png","w+")
                 plt.savefig(f"{student}.png","w+")
+                plt.clf()
             #bar chart of quizzes
             for index in range(13,19):
                 y_amount = []
@@ -175,6 +176,7 @@ def s_charts():
                 plt.title('Bar chart of quizs')
                 plt.show(f"{student}.png","w+")
                 plt.savefig(f"{student}.png","w+")
+                plt.clf()
             #bar chart of reading activties
             for index in range(20,22):
                 y_amount = []
@@ -188,6 +190,7 @@ def s_charts():
                 plt.title('Bar chart of reading activties')
                 plt.show(f"{student}.png","w+")
                 plt.savefig(f"{student}.png","w+")
+                plt.clf()
             #bar chart of exams
             for index in range(20,22):
                 y_amount = []
@@ -201,6 +204,7 @@ def s_charts():
                 plt.title('Bar chart of exam grades')
                 plt.show(f"{student}.png","w+")
                 plt.savefig(f"{student}.png","w+")
+                plt.clf()
 
 def c_report():
     #tot = 
