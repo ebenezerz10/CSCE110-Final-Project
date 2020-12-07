@@ -114,4 +114,3 @@ def c_charts():
     pass
 
 menu()
-print(student_report)
