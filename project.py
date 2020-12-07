@@ -41,7 +41,8 @@ def menu():
     elif choice == "2" or choice == "2.":
         s_report()
     elif choice == "3" or choice == "3.":
-        s_charts()  
+        #s_charts()  
+        pass
     elif choice == "4" or choice == "4.":
         c_report()   
     elif choice == "5" or choice == "5.":
@@ -206,6 +207,7 @@ def s_charts():
                 plt.savefig(f"{student}.png","w+")
                 plt.clf()
 """
+
 def c_report():
     #tot = 
     #min = 
