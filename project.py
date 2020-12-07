@@ -50,7 +50,7 @@ def menu():
         menu()
         
 def read():
-    global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f
+    global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project#, res, lab_f
     data = input("Please enter the path and name of your CSV file: ")
     #noah's path 
     #C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
@@ -59,12 +59,8 @@ def read():
     with open (data) as f:
         data_read = csv.reader(f)  # reads file
         next(data_read, None)
-        header_line = True
         for row in data_read:
             print(row)
-            if header_line:
-                header_line = False
-                continue
             student_report = row[0:23]
             #print(student_report)  
             uin.append(row[0])
@@ -73,26 +69,23 @@ def read():
             ra_m.append(row[12:19])
             exam_m.append(row[18:22])
             project.append(row [22:23])
-            res = [int(float(i)) for i in lab_m]
-            lab_f = sum(res)/len(res)
+            res = 1 #[int( for i in lab_m]
+            #lab_f = sum(res)/len(res)
             #print(round(lab_f,1))
         menu()
-        return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, res, lab_f
+        return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project#, res, lab_f
         
 def s_report():
-    while True:
-        #print("practice print of the student_report", student_report)
-        #print("practice print of uin", uin)
-        student = input("Please enter the UIN of the student you would like to general a report for: ")
-        if student.isdigit() and len(student) == 10 and student in uin:
-            print("This is a valid UIN")
-            break
-        #add to make sure it checks to see if the UIN is in the data
-        else:
-            print("This is not valid")
-            student = input("Please enter the UIN of the student you would like to general a report for: ") 
+    #print("practice print of the student_report", student_report)
+    print("practice print of uin", uin)
+    student = input("Please enter the UIN of the student you would like to general a report for: ")
+    if student in uin:
+        print("This is a valid UIN")
+    #add to make sure it checks to see if the UIN is in the data
+    else: 
+        print("This is not valid")
     txt = open(f"{student}.txt","w+")
-    txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m,lab_f,quiz_m,ra_m))
+    #txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\n".format(exam_m),lab_f,quiz_m,ra_m))
     print("Your report has been created as a .txt file")
     #need to add score and letter grade
     txt.close
