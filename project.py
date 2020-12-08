@@ -79,6 +79,8 @@ def read():
     # C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
     # eb's path
     # C:\Users\ebenezerz10\Documents\GitHub\CSCE110-Final-Project\grades.csv
+    #other computer
+    #C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
     with open(data) as f:
         read_check = "1"
         data_read = csv.reader(f)  # reads file
@@ -234,6 +236,7 @@ def s_charts():
     menu()
 
 def c_report():
+    res = []
     for row in student_report:
         # uin_for_row = row[0]
         total = 0
@@ -267,18 +270,19 @@ def c_report():
             project_total = project_total + thisGrade
             total = total + project_total * .1
         total = total / 10
-        total = round(total, 1)
-        print(total)
-            
-        """ 
-        sum_exam = sum(exam_t)
-        exam_mean = sum_exam / 3
-        exam_mean = round(exam_mean,1)
-        print(exam_mean)
-        min_exam = min(exam_mean)
-        print(min_exam)
-        max_exam = max(exam_t)
-        print(max_exam)"""
+        total = "%.1f" % total
+        res.append(total)
+        res_min = min(float(sub) for sub in res) 
+        res_max = max(float(sub) for sub in res)   
+    print(res_min)      
+    print(res_max)
+    """  
+        for num in total:
+            num = [int(i) for i in total]
+            min_total = min(num)
+            print(min_total)
+            max_total = max(num)
+            print(max_total)"""
 
     #med = 
     #mean = 
