@@ -184,8 +184,7 @@ def s_charts():
             plt.xlabel('Lab Assignments')
             plt.title('Bar chart of labs')
             plt.show()
-            #plt.show(f"{student}.png","w+")
-            plt.savefig(f"{student}.png")
+            plt.savefig(f"{uin_directory}/Labs Bar Chart.png")
             print('Lab Bar Chart Saved')
             plt.clf()
             #bar chart of quizzes
@@ -199,8 +198,8 @@ def s_charts():
             plt.ylabel('Grade')
             plt.xlabel('Quiz Assignments')
             plt.title('Bar chart of quizs')
-            #plt.show(f"{student}.png","w+")
-            plt.savefig(f"{student}.png")
+            plt.show()
+            plt.savefig(f"{uin_directory}/Quizs Bar Chart.png")
             plt.clf()
             #bar chart of reading activties
             for index in range(13,18):
@@ -213,8 +212,8 @@ def s_charts():
             plt.ylabel('Grade')
             plt.xlabel('Reading Activities')
             plt.title('Bar chart of reading activties')
-            #plt.show(f"{student}.png","w+")
-            plt.savefig(f"{student}.png")
+            plt.show()
+            plt.savefig(f"{uin_directory}/Reading Activties Bar Chart.png")
             plt.clf()
             #bar chart of exams
             for index in range(19,21):
@@ -227,8 +226,8 @@ def s_charts():
             plt.ylabel('Grade')
             plt.xlabel('Exam Number')
             plt.title('Bar chart of exam grades')
-            #plt.show(f"{student}.png","w+")
-            plt.savefig(f"{student}.png")
+            plt.show()
+            plt.savefig(f"{uin_directory}/Exams Bar Chart.png")
             plt.clf()
     menu()
 
