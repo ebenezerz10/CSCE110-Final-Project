@@ -154,7 +154,7 @@ def s_report():
             txt.write(
                 "Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\nScore: {}%\nLetter grade: {}\n".format(
                     exam_mean, lab_mean, quiz_mean, reading_mean, total, letter_grade))
-            # txt.write(total, lab_total, quiz_total, reading_total, exam_total, project_total)
+            #txt.write(total, lab_total, quiz_total, reading_total, exam_total, project_total)
             txt.close
             print("Your report has been created as a .txt file")
             menu()
@@ -233,19 +233,27 @@ def s_charts():
     menu()
 
 def c_report():
-    # tot =
-    # min =
-    # max =
-    # med =
-    # mean =
-    # std =
-    print("Total number of students: ")
-    print("Minimum score: ")
-    print("Maximum score: ")
-    print("Medium score: ")
-    print("Mean score: ")
-    print("Standard deviation: ")
-    pass
+for num in exam_m:
+        total = 0
+        exam_t = [int(float(i)) for i in num]
+        sum_exam = sum(exam_t)
+        exam_mean = sum_exam / 3
+        exam_mean = round(exam_mean,1)
+        print(exam_mean)
+        min_exam = min(exam_mean)
+        print(min_exam)
+        max_exam = max(exam_t)
+        print(max_exam)
+
+    #med = 
+    #mean = 
+    #std =
+    print("Total numebr of students: {}".format(counter))
+    print("Minimum score: {}")
+    print("Maximum score: {}")
+    print("Medium score: {}")
+    print("Mean score: {}")
+    print("Standard deviation: {}")
 
 def c_charts():
     pass
