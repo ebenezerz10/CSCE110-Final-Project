@@ -73,7 +73,7 @@ def menu():
         menu()
 
 def read():
-    global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, read_check
+    global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, read_check, data, counter
     data = input("Please enter the path and name of your CSV file: ")
     # noah's path
     # C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
@@ -84,6 +84,7 @@ def read():
         data_read = csv.reader(f)  # reads file
         next(data_read, None)
         for row in data_read:
+            counter = counter + 1
             student_report.append(row[0:23])
             uin.append(row[0])
             lab_m.append(row[1:7])
@@ -92,8 +93,7 @@ def read():
             exam_m.append(row[18:22])
             project.append(row[22:23])
         menu()
-        return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, read_check
-
+        return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, read_check, data, counter
 def s_report():
     student = input("Please enter the UIN of the student you would like to general a report for: ")
     if student in uin:
@@ -137,6 +137,7 @@ def s_report():
                 total = total + project_total * .1
             total = total / 10
             total = round(total, 1)
+            print(total)
             exam_mean = round(exam_mean, 1)
             lab_mean = round(lab_mean, 1)
             quiz_mean = round(quiz_mean, 1)
@@ -233,9 +234,43 @@ def s_charts():
     menu()
 
 def c_report():
-for num in exam_m:
+    for row in student_report:
+        # uin_for_row = row[0]
         total = 0
-        exam_t = [int(float(i)) for i in num]
+        lab_total = 0
+        quiz_total = 0
+        reading_total = 0
+        exam_total = 0
+        project_total = 0
+        for index in range(1, 6):
+            thisGrade = float(row[index])
+            lab_total = lab_total + thisGrade
+            total = total + lab_total * .25
+            lab_mean = lab_total / 6
+        for index in range(7, 12):
+            thisGrade = float(row[index])
+            quiz_total = quiz_total + thisGrade
+            total = total + quiz_total * .1
+            quiz_mean = quiz_total / 6
+        for index in range(13, 19):
+            thisGrade = float(row[index])
+            reading_total = reading_total + thisGrade
+            total = total + reading_total * .1
+            reading_mean = reading_total / 6
+        for index in range(20, 22):
+            thisGrade = float(row[index])
+            exam_total = exam_total + thisGrade
+            total = total + exam_total * .45
+            exam_mean = exam_total / 3
+        for index in range(20, 22):
+            thisGrade = float(row[index])
+            project_total = project_total + thisGrade
+            total = total + project_total * .1
+        total = total / 10
+        total = round(total, 1)
+        print(total)
+            
+        """ 
         sum_exam = sum(exam_t)
         exam_mean = sum_exam / 3
         exam_mean = round(exam_mean,1)
@@ -243,7 +278,7 @@ for num in exam_m:
         min_exam = min(exam_mean)
         print(min_exam)
         max_exam = max(exam_t)
-        print(max_exam)
+        print(max_exam)"""
 
     #med = 
     #mean = 
