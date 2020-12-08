@@ -172,14 +172,13 @@ def s_charts():
             #bar chart of labs
             plt.style.use('ggplot')
             x_label = ['Lab 1', 'Lab 2', 'Lab 3', 'Lab 4', 'Lab 5', 'Lab 6']
-            #y_amount = row[1:7]
-            y_amount = [93, 90, 99, 56.5, 47, 92]
-            #y_amount = ('[%s]' % ', '.join(map(str, y_amount)))
+            y_amount = row[1:7]
+            new_y_amount = [int(float(num)) for num in y_amount]
             y_pos = np.arange(len(x_label))
             print(row)
             print(y_amount)
             #plt.bar(y_pos, y_amount, align='center', alpha=0.5)
-            plt.bar(x_label, y_amount)#, color='blue', align='center', alpha=0.5)
+            plt.bar(x_label, new_y_amount)#, color='blue', align='center', alpha=0.5)
             plt.xticks(y_pos, x_label)
             plt.ylabel('Grade')
             plt.xlabel('Lab Assignments')
