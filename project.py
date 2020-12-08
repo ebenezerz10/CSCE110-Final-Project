@@ -4,8 +4,8 @@ import csv
 import sys
 import os
 import pathlib
-import matplotlib.pyplot as plt
-import numpy as np
+#import matplotlib.pyplot as plt
+#import numpy as np
 
 # Global Variable
 uin = []
@@ -19,6 +19,10 @@ counter = 0
 project = []
 student_report = []
 read_check = 0
+
+print("PYTHONPATH:", os.environ.get('PYTHONPATH'))
+print("PATH:", os.environ.get('PATH'))
+
 
 def main():
     menu()
@@ -74,7 +78,7 @@ def read():
     # noah's path
     # C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
     # eb's path
-    # C:\Users\ebenezerz10\Documents\GitHub\CSCE110-Final-Project
+    # C:\Users\ebenezerz10\Documents\GitHub\CSCE110-Final-Project\grades.csv
     with open(data) as f:
         read_check = "1"
         data_read = csv.reader(f)  # reads file
@@ -172,7 +176,7 @@ def s_charts():
             for index in range(1,6):
                 y_amount = []
                 x_label = ('Lab 1', 'Lab 2', 'Lab 3','Lab 4','Lab 5','Lab 6')
-                y_amount.append(row[index])
+                y_amount.append(index)
                 y_pos = np.arange(len(x_label))
             plt.bar(y_pos, y_amount, align='center', alpha=0.5)
             plt.xticks(y_pos, x_label)
@@ -180,7 +184,8 @@ def s_charts():
             plt.xlabel('Lab Assignments')
             plt.title('Bar chart of labs')
             plt.show()
-            plt.savefig(f"{uin_directory}/Labs Bar Chart.png")
+            #plt.show(f"{student}.png","w+")
+            plt.savefig(f"{student}.png")
             print('Lab Bar Chart Saved')
             plt.clf()
             #bar chart of quizzes
@@ -194,8 +199,8 @@ def s_charts():
             plt.ylabel('Grade')
             plt.xlabel('Quiz Assignments')
             plt.title('Bar chart of quizs')
-            plt.show()
-            plt.savefig(f"{uin_directory}/Quizs Bar Chart.png")
+            #plt.show(f"{student}.png","w+")
+            plt.savefig(f"{student}.png")
             plt.clf()
             #bar chart of reading activties
             for index in range(13,18):
@@ -208,8 +213,8 @@ def s_charts():
             plt.ylabel('Grade')
             plt.xlabel('Reading Activities')
             plt.title('Bar chart of reading activties')
-            plt.show()
-            plt.savefig(f"{uin_directory}/Reading Activties Bar Chart.png")
+            #plt.show(f"{student}.png","w+")
+            plt.savefig(f"{student}.png")
             plt.clf()
             #bar chart of exams
             for index in range(19,21):
@@ -222,33 +227,24 @@ def s_charts():
             plt.ylabel('Grade')
             plt.xlabel('Exam Number')
             plt.title('Bar chart of exam grades')
-            plt.show()
-            plt.savefig(f"{uin_directory}/Exams Bar Chart.png")
+            #plt.show(f"{student}.png","w+")
+            plt.savefig(f"{student}.png")
             plt.clf()
     menu()
 
 def c_report():
-    for num in exam_m:
-        total = 0
-        exam_t = [int(float(i)) for i in num]
-        sum_exam = sum(exam_t)
-        exam_mean = sum_exam / 3
-        exam_mean = round(exam_mean,1)
-        print(exam_mean)
-        min_exam = min(exam_mean)
-        print(min_exam)
-        max_exam = max(exam_t)
-        print(max_exam)
-
-    #med = 
-    #mean = 
-    #std =
-    print("Total numebr of students: {}".format(counter))
-    print("Minimum score: {}")
-    print("Maximum score: {}")
-    print("Medium score: {}")
-    print("Mean score: {}")
-    print("Standard deviation: {}")
+    # tot =
+    # min =
+    # max =
+    # med =
+    # mean =
+    # std =
+    print("Total number of students: ")
+    print("Minimum score: ")
+    print("Maximum score: ")
+    print("Medium score: ")
+    print("Mean score: ")
+    print("Standard deviation: ")
     pass
 
 def c_charts():
