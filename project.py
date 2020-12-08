@@ -20,10 +20,6 @@ project = []
 student_report = []
 read_check = 0
 
-print("PYTHONPATH:", os.environ.get('PYTHONPATH'))
-print("PATH:", os.environ.get('PATH'))
-
-
 def main():
     menu()
 
@@ -176,7 +172,7 @@ def s_charts():
             for index in range(1,6):
                 y_amount = []
                 x_label = ('Lab 1', 'Lab 2', 'Lab 3','Lab 4','Lab 5','Lab 6')
-                y_amount.append(index)
+                y_amount.append(row[index])
                 y_pos = np.arange(len(x_label))
             plt.bar(y_pos, y_amount, align='center', alpha=0.5)
             plt.xticks(y_pos, x_label)
