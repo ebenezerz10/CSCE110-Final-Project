@@ -4,8 +4,9 @@ import csv
 import sys
 import os
 import pathlib
-#import matplotlib.pyplot as plt
-#import numpy as np
+import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt;plt.rcdefaults()
+import numpy as np
 
 # Global Variable
 uin = []
@@ -19,10 +20,6 @@ counter = 0
 project = []
 student_report = []
 read_check = 0
-
-print("PYTHONPATH:", os.environ.get('PYTHONPATH'))
-print("PATH:", os.environ.get('PATH'))
-
 
 def main():
     menu()
@@ -58,7 +55,6 @@ def menu():
         else: 
             print("Data has not been read")
             menu()
-        
     elif choice == "5" or choice == "5.":
         if read_check == "1":
             c_charts()
@@ -156,13 +152,10 @@ def s_report():
             txt.write(
                 "Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\nScore: {}%\nLetter grade: {}\n".format(
                     exam_mean, lab_mean, quiz_mean, reading_mean, total, letter_grade))
-            #txt.write(total, lab_total, quiz_total, reading_total, exam_total, project_total)
             txt.close
             print("Your report has been created as a .txt file")
             menu()
     print(total)
-
-    # need to add score and letter grade
 
 def s_charts():
     student = input("Please enter the UIN of the student you would like to general a report for: ")
@@ -177,22 +170,21 @@ def s_charts():
             if not os.path.exists(uin_directory):
                 os.makedirs(uin_directory)
             #bar chart of labs
-            for index in range(1,6):
-                y_amount = []
-                x_label = ('Lab 1', 'Lab 2', 'Lab 3','Lab 4','Lab 5','Lab 6')
-                y_amount.append(index)
-                y_pos = np.arange(len(x_label))
-            plt.bar(y_pos, y_amount, align='center', alpha=0.5)
-            plt.xticks(y_pos, x_label)
+            x_label = ['Lab 1', 'Lab 2', 'Lab 3', 'Lab 4', 'Lab 5', 'Lab 6']
+            y_amount = row[1:6]
+            y_amount = ('[%s]' % ', '.join(map(str, y_amount)))
+            # y_pos = np.arange(len(x_label))
+            print(y_amount)
+            plt.bar(x_label, y_amount, align='center', alpha=0.5)
+            # plt.xticks(y_pos, x_label)
             plt.ylabel('Grade')
             plt.xlabel('Lab Assignments')
             plt.title('Bar chart of labs')
             plt.show()
-            #plt.show(f"{student}.png","w+")
-            plt.savefig(f"{student}.png")
+            plt.savefig(f"{uin_directory}/Labs Bar Chart.png")
             print('Lab Bar Chart Saved')
             plt.clf()
-            #bar chart of quizzes
+            """#bar chart of quizzes
             for index in range(7,12):
                 y_amount = []
                 x_label = ('Quiz 1', 'Quiz 2', 'Quiz 3','Quiz 4','Quiz 5','Quiz 6')
@@ -233,7 +225,7 @@ def s_charts():
             plt.title('Bar chart of exam grades')
             #plt.show(f"{student}.png","w+")
             plt.savefig(f"{student}.png")
-            plt.clf()
+            plt.clf()"""
     menu()
 
 def c_report():
