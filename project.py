@@ -139,7 +139,6 @@ def s_report():
                 total = total + project_total * .1
             total = total / 10
             total = round(total, 1)
-            print(total)
             exam_mean = round(exam_mean, 1)
             lab_mean = round(lab_mean, 1)
             quiz_mean = round(quiz_mean, 1)
@@ -161,6 +160,8 @@ def s_report():
             txt.close
             print("Your report has been created as a .txt file")
             menu()
+    print(total)
+
     # need to add score and letter grade
 
 def s_charts():
@@ -238,6 +239,8 @@ def s_charts():
 def c_report():
     res = []
     for row in student_report:
+        score_total = 0
+
         # uin_for_row = row[0]
         total = 0
         lab_total = 0
@@ -245,51 +248,62 @@ def c_report():
         reading_total = 0
         exam_total = 0
         project_total = 0
-        for index in range(1, 6):
+        for index in range(1, 7):
             thisGrade = float(row[index])
             lab_total = lab_total + thisGrade
-            total = total + lab_total * .25
+            res_total = lab_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .25
             lab_mean = lab_total / 6
-        for index in range(7, 12):
+        l_total = total
+        for index in range(7, 13):
             thisGrade = float(row[index])
             quiz_total = quiz_total + thisGrade
-            total = total + quiz_total * .1
+            res_total = quiz_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
             quiz_mean = quiz_total / 6
+        q_total = total
         for index in range(13, 19):
             thisGrade = float(row[index])
             reading_total = reading_total + thisGrade
-            total = total + reading_total * .1
+            res_total = reading_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
             reading_mean = reading_total / 6
-        for index in range(20, 22):
+        r_total = total
+        for index in range(19, 22):
             thisGrade = float(row[index])
             exam_total = exam_total + thisGrade
-            total = total + exam_total * .45
-            exam_mean = exam_total / 3
-        for index in range(20, 22):
+            res_total = exam_total/300
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .45
+            exam_mean = exam_total 
+        e_total = total
+        for index in range(22,23):
             thisGrade = float(row[index])
             project_total = project_total + thisGrade
-            total = total + project_total * .1
-        total = total / 10
-        total = "%.1f" % total
-        res.append(total)
-        res_min = min(float(sub) for sub in res) 
-        res_max = max(float(sub) for sub in res)   
-    print(res_min)      
-    print(res_max)
-    """  
-        for num in total:
-            num = [int(i) for i in total]
-            min_total = min(num)
-            print(min_total)
-            max_total = max(num)
-            print(max_total)"""
-
-    #med = 
+            res_total = project_total/100
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            #print(thisGrade)
+        p_total = total
+        new_total = l_total+q_total+r_total+e_total+p_total
+        score_total = "%.1f" % new_total
+        res.append(score_total)
+        print(res)
+    res_min = min(float(sub) for sub in res) 
+    res_max = max(float(sub) for sub in res) 
     #mean = 
     #std =
     print("Total numebr of students: {}".format(counter))
-    print("Minimum score: {}")
-    print("Maximum score: {}")
+    print("Minimum score: {}".format(res_min))
+    print("Maximum score: {}".format(res_max))
     print("Medium score: {}")
     print("Mean score: {}")
     print("Standard deviation: {}")
@@ -298,3 +312,10 @@ def c_charts():
     pass
 
 menu()
+
+"""  
+l = 477.5  79.6  19.9
+q = 422    70.3  7.03
+r = 464.25   77.4  7.74
+e = 170.5    56.8  25.56
+p = 88       8.8   .88"""
