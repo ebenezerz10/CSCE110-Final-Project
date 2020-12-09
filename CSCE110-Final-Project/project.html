@@ -54,10 +54,8 @@ project = []
 student_report = []
 read_check = 0
 
-def main():
-    menu()
-
 def menu():
+    &#34;&#34;&#34;This function is the user interface of the project and allows the user to chose what grading information they want the program to produce.&#34;&#34;&#34;
     global read_check
     print(&#34;*******************Main Menu*****************&#34;)
     print(&#34;1. Read CSV file of grades&#34;)
@@ -102,6 +100,7 @@ def menu():
         menu()
 
 def read():
+    &#34;&#34;&#34;This function reads the csv file and saves the information into different variable that allow the rest of the programt to work&#34;&#34;&#34;
     global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, read_check, data, counter
     data = input(&#34;Please enter the path and name of your CSV file: &#34;)
     # noah&#39;s path
@@ -125,7 +124,9 @@ def read():
             project.append(row[22:23])
         menu()
         return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, read_check, data, counter
+
 def s_report():
+    &#34;&#34;&#34;This function creates and saves a text document report for a indivdiual student based off the user inputted uin&#34;&#34;&#34;
     student = input(&#34;Please enter the UIN of the student you would like to general a report for: &#34;)
     if student in uin:
         print(&#34;This is a valid UIN&#34;)
@@ -186,7 +187,9 @@ def s_report():
             txt.close
             print(&#34;Your report has been created as a .txt file&#34;)
     menu()
+
 def s_charts():
+    &#34;&#34;&#34;This function creates and saves a png file bar graph report for a indivdiual student based off the user inputted uin&#34;&#34;&#34;
     student = input(&#34;Please enter the UIN of the student you would like to general a report for: &#34;)
     if student in uin:
         print(&#34;This is a valid UIN&#34;)
@@ -273,6 +276,7 @@ def s_charts():
     menu()
 
 def c_report():
+    &#34;&#34;&#34;&#34;This function creates and saves a text document report for the class&#34;&#34;&#34;
     res = []
     for row in student_report:
         score_total = 0
@@ -359,6 +363,7 @@ def c_report():
 menu()
 
 def c_charts():
+    &#34;&#34;&#34;&#34;This function creates and saves a png file bar chart report for the class&#34;&#34;&#34;
     # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
     res = []
     for row in student_report:
@@ -442,12 +447,13 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
 <span>def <span class="ident">c_charts</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>"This function creates and saves a png file bar chart report for the class</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def c_charts():
+    &#34;&#34;&#34;&#34;This function creates and saves a png file bar chart report for the class&#34;&#34;&#34;
     # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
     res = []
     for row in student_report:
@@ -515,12 +521,13 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
 <span>def <span class="ident">c_report</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>"This function creates and saves a text document report for the class</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def c_report():
+    &#34;&#34;&#34;&#34;This function creates and saves a text document report for the class&#34;&#34;&#34;
     res = []
     for row in student_report:
         score_total = 0
@@ -606,29 +613,17 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
     print(&#34;The class report has been generated in report.txt file.&#34;)</code></pre>
 </details>
 </dd>
-<dt id="project.main"><code class="name flex">
-<span>def <span class="ident">main</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def main():
-    menu()</code></pre>
-</details>
-</dd>
 <dt id="project.menu"><code class="name flex">
 <span>def <span class="ident">menu</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>This function is the user interface of the project and allows the user to chose what grading information they want the program to produce.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def menu():
+    &#34;&#34;&#34;This function is the user interface of the project and allows the user to chose what grading information they want the program to produce.&#34;&#34;&#34;
     global read_check
     print(&#34;*******************Main Menu*****************&#34;)
     print(&#34;1. Read CSV file of grades&#34;)
@@ -677,12 +672,13 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
 <span>def <span class="ident">read</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>This function reads the csv file and saves the information into different variable that allow the rest of the programt to work</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def read():
+    &#34;&#34;&#34;This function reads the csv file and saves the information into different variable that allow the rest of the programt to work&#34;&#34;&#34;
     global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, read_check, data, counter
     data = input(&#34;Please enter the path and name of your CSV file: &#34;)
     # noah&#39;s path
@@ -712,12 +708,13 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
 <span>def <span class="ident">s_charts</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>This function creates and saves a png file bar graph report for a indivdiual student based off the user inputted uin</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def s_charts():
+    &#34;&#34;&#34;This function creates and saves a png file bar graph report for a indivdiual student based off the user inputted uin&#34;&#34;&#34;
     student = input(&#34;Please enter the UIN of the student you would like to general a report for: &#34;)
     if student in uin:
         print(&#34;This is a valid UIN&#34;)
@@ -808,12 +805,13 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
 <span>def <span class="ident">s_report</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"></div>
+<div class="desc"><p>This function creates and saves a text document report for a indivdiual student based off the user inputted uin</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def s_report():
+    &#34;&#34;&#34;This function creates and saves a text document report for a indivdiual student based off the user inputted uin&#34;&#34;&#34;
     student = input(&#34;Please enter the UIN of the student you would like to general a report for: &#34;)
     if student in uin:
         print(&#34;This is a valid UIN&#34;)
@@ -891,7 +889,6 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
 <ul class="two-column">
 <li><code><a title="project.c_charts" href="#project.c_charts">c_charts</a></code></li>
 <li><code><a title="project.c_report" href="#project.c_report">c_report</a></code></li>
-<li><code><a title="project.main" href="#project.main">main</a></code></li>
 <li><code><a title="project.menu" href="#project.menu">menu</a></code></li>
 <li><code><a title="project.read" href="#project.read">read</a></code></li>
 <li><code><a title="project.s_charts" href="#project.s_charts">s_charts</a></code></li>

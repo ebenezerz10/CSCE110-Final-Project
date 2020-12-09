@@ -248,7 +248,7 @@ def s_charts():
     menu()
 
 def c_report():
-    """"This function creates and saves a text document report for the class"""
+    """This function creates and saves a text document report for the class"""
     res = []
     for row in student_report:
         score_total = 0
@@ -335,7 +335,7 @@ def c_report():
 menu()
 
 def c_charts():
-    """"This function creates and saves a png file bar chart report for the class"""
+    """This function creates and saves a png file bar chart report for the class"""
     # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
     res = []
     for row in student_report:
