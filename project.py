@@ -4,9 +4,9 @@ import csv
 import sys
 import os
 import pathlib
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 #import matplotlib.pyplot as plt;plt.rcdefaults()
-#import numpy as np
+import numpy as np
 
 # Global Variable
 uin = []
@@ -170,11 +170,11 @@ def s_charts():
             if not os.path.exists(uin_directory):
                 os.makedirs(uin_directory)
             #bar chart of labs
-            plt.style.use('ggplot')
             x_label = ['Lab 1', 'Lab 2', 'Lab 3', 'Lab 4', 'Lab 5', 'Lab 6']
             y_amount = row[1:7]
             new_y_amount = [int(float(num)) for num in y_amount]
             y_pos = np.arange(len(x_label))
+            print("Labs")
             print(row)
             print(y_amount)
             #plt.bar(y_pos, y_amount, align='center', alpha=0.5)
@@ -187,48 +187,63 @@ def s_charts():
             plt.savefig(f"{uin_directory}/Labs Bar Chart.png")
             print('Lab Bar Chart Saved')
             plt.clf()
-            """#bar chart of quizzes
-            for index in range(7,12):
-                y_amount = []
-                x_label = ('Quiz 1', 'Quiz 2', 'Quiz 3','Quiz 4','Quiz 5','Quiz 6')
-                y_amount.append(index)
-                y_pos = np.arange(len(x_label))
-            plt.bar(y_pos, y_amount, align='center', alpha=0.5)
+
+            #bar chart of quizzes
+            x_label = ('Quiz 1', 'Quiz 2', 'Quiz 3','Quiz 4','Quiz 5','Quiz 6')
+            y_amount = row[7:13]
+            new_y_amount = [int(float(num)) for num in y_amount]
+            y_pos = np.arange(len(x_label))
+            print("Quizes")
+            print(row)
+            print(y_amount)
+            #plt.bar(y_pos, y_amount, align='center', alpha=0.5)
+            plt.bar(x_label, new_y_amount)#, color='blue', align='center', alpha=0.5)
             plt.xticks(y_pos, x_label)
             plt.ylabel('Grade')
             plt.xlabel('Quiz Assignments')
             plt.title('Bar chart of quizs')
-            #plt.show(f"{student}.png","w+")
-            plt.savefig(f"{student}.png")
+            plt.show()
+            plt.savefig(f"{uin_directory}/Quizs Bar Chart.png")
+            print('Lab Bar Chart Saved')
             plt.clf()
+
             #bar chart of reading activties
-            for index in range(13,18):
-                y_amount = []
-                x_label = ('RA 1', 'RA 2', 'RA 3','RA 4','RA 5','RA 6')
-                y_amount.append(index)
-                y_pos = np.arange(len(x_label))
-            plt.bar(y_pos, y_amount, align='center', alpha=0.5)
+            x_label = ('RA 1', 'RA 2', 'RA 3','RA 4','RA 5','RA 6')
+            y_amount = row[13:19]
+            new_y_amount = [int(float(num)) for num in y_amount]
+            y_pos = np.arange(len(x_label))
+            print("RA")
+            print(row)
+            print(y_amount)
+            #plt.bar(y_pos, y_amount, align='center', alpha=0.5)
+            plt.bar(x_label, new_y_amount)#, color='blue', align='center', alpha=0.5)
             plt.xticks(y_pos, x_label)
             plt.ylabel('Grade')
             plt.xlabel('Reading Activities')
-            plt.title('Bar chart of reading activties')
-            #plt.show(f"{student}.png","w+")
-            plt.savefig(f"{student}.png")
+            plt.title('Bar chart of Reading Activties')
+            plt.show()
+            plt.savefig(f"{uin_directory}/Reading Activities Bar Chart.png")
+            print('Lab Bar Chart Saved')
             plt.clf()
+
             #bar chart of exams
-            for index in range(19,21):
-                y_amount = []
-                x_label = ('Exam 1', 'Exam 2', 'Exam 3')
-                y_amount.append(index)
-                y_pos = np.arange(len(x_label))
-            plt.bar(y_pos, y_amount, align='center', alpha=0.5)
+            x_label = ('Exam 1', 'Exam 2', 'Exam 3')
+            y_amount = row[19:22]
+            new_y_amount = [int(float(num)) for num in y_amount]
+            y_pos = np.arange(len(x_label))
+            print("Exams")
+            print(row)
+            print(y_amount)
+            #plt.bar(y_pos, y_amount, align='center', alpha=0.5)
+            plt.bar(x_label, new_y_amount)#, color='blue', align='center', alpha=0.5)
             plt.xticks(y_pos, x_label)
             plt.ylabel('Grade')
-            plt.xlabel('Exam Number')
-            plt.title('Bar chart of exam grades')
-            #plt.show(f"{student}.png","w+")
-            plt.savefig(f"{student}.png")
-            plt.clf()"""
+            plt.xlabel('Exam #')
+            plt.title('Bar chart of Exams')
+            plt.show()
+            plt.savefig(f"{uin_directory}/Exams Bar Chart.png")
+            print('Lab Bar Chart Saved')
+            plt.clf()
     menu()
 
 def c_report():
