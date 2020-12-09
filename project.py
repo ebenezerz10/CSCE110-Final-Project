@@ -7,6 +7,7 @@ import pathlib
 import matplotlib.pyplot as plt
 #import matplotlib.pyplot as plt;plt.rcdefaults()
 import numpy as np
+import math
 
 # Global Variable
 uin = []
@@ -319,14 +320,17 @@ def c_report():
         median = res[n//2] 
     get_sum = sum(map(float,res))
     mean = get_sum / n
-    #std =
+    var = sum(pow(float(x)-mean,2) for x in res) / n
+    std =math.sqrt(var)
+    txt = open('')
     print("Total numebr of students: {}".format(counter))
     print("Minimum score: {}".format(res_min))
     print("Maximum score: {}".format(res_max))
     print("Medium score: {}".format(median))
     print("Mean score: {}".format(round(mean,1)))
-    print("Standard deviation: {}")
+    print("Standard deviation: {}".format(round(std,1)))
 
+#C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
 def c_charts():
     pass
 
