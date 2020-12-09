@@ -332,7 +332,7 @@ def c_report():
 
 def c_charts():
     """This function creates and saves a png file bar chart report for the class"""
-    # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
+   # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
     res = []
     grades = []
     A = []
@@ -446,7 +446,18 @@ def c_charts():
     print('Lab Bar Chart Saved')
     plt.show()
     plt.clf()
+    ### Pie chart for grade
+    fig = plt.figure(figsize = (10,7))
+    plt.pie(num_total,labels= grade_letter)
+    plt.savefig('class_charts')
+    plt.title("Class letter grades")
+    print('Lab Pie Chart Saved')
+    plt.show()
+    plt.clf()
 
+
+    # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
+    menu()
 
 
 
