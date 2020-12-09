@@ -26,10 +26,8 @@ project = []
 student_report = []
 read_check = 0
 
-def main():
-    menu()
-
 def menu():
+    """This function is the user interface of the project and allows the user to chose what grading information they want the program to produce."""
     global read_check
     print("*******************Main Menu*****************")
     print("1. Read CSV file of grades")
@@ -74,6 +72,7 @@ def menu():
         menu()
 
 def read():
+    """This function reads the csv file and saves the information into different variable that allow the rest of the programt to work"""
     global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, read_check, data, counter
     data = input("Please enter the path and name of your CSV file: ")
     # noah's path
@@ -97,7 +96,9 @@ def read():
             project.append(row[22:23])
         menu()
         return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, read_check, data, counter
+
 def s_report():
+    """This function creates and saves a text document report for a indivdiual student based off the user inputted uin"""
     student = input("Please enter the UIN of the student you would like to general a report for: ")
     if student in uin:
         print("This is a valid UIN")
@@ -158,7 +159,9 @@ def s_report():
             txt.close
             print("Your report has been created as a .txt file")
     menu()
+
 def s_charts():
+    """This function creates and saves a png file bar graph report for a indivdiual student based off the user inputted uin"""
     student = input("Please enter the UIN of the student you would like to general a report for: ")
     if student in uin:
         print("This is a valid UIN")
@@ -245,6 +248,7 @@ def s_charts():
     menu()
 
 def c_report():
+    """"This function creates and saves a text document report for the class"""
     res = []
     for row in student_report:
         score_total = 0
@@ -331,6 +335,7 @@ def c_report():
 menu()
 
 def c_charts():
+    """"This function creates and saves a png file bar chart report for the class"""
     # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
     res = []
     for row in student_report:

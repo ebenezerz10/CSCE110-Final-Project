@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>project API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>project</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#File:    project.py
+#Author:  Noah Woinicki and Ebenezer Zabayor
+#Date:    11/23/2020
+#Email:  noahwoinicki@tamu.edu and ebenezer10@tamu.edu
+
+#imports
+import csv
+import sys
+import os
+import pathlib
+import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt;plt.rcdefaults()
+import numpy as np
+import math
+
+# Global Variables
+uin = []
+lab_m = []
+exam_m = []
+quiz_m = []
+ra_m = []
+score = []
+grade = []
+counter = 0
+project = []
+student_report = []
+read_check = 0
+
+def main():
+    menu()
+
+def menu():
+    global read_check
+    print(&#34;*******************Main Menu*****************&#34;)
+    print(&#34;1. Read CSV file of grades&#34;)
+    print(&#34;2. Generate student report file&#34;)
+    print(&#34;3. Generate student report charts&#34;)
+    print(&#34;4. Generate class report file&#34;)
+    print(&#34;5. Generate class report charts&#34;)
+    print(&#34;6. Quit&#34;)
+    print(&#34;************************************************&#34;)
+    choice = input(&#34;Please chose your option: &#34;)
+    if choice == &#34;1&#34; or choice == &#34;1.&#34;:
+        read()
+    elif choice == &#34;2&#34; or choice == &#34;2.&#34;:
+        if read_check == &#34;1&#34;:
+            s_report()
+        else: 
+            print(&#34;Data has not been read&#34;)
+            menu()
+    elif choice == &#34;3&#34; or choice == &#34;3.&#34;:
+        if read_check == &#34;1&#34;:
+            s_charts()
+        else: 
+            print(&#34;Data has not been read&#34;)
+            menu()
+    elif choice == &#34;4&#34; or choice == &#34;4.&#34;:
+        if read_check == &#34;1&#34;:
+            c_report()
+        else: 
+            print(&#34;Data has not been read&#34;)
+            menu()
+    elif choice == &#34;5&#34; or choice == &#34;5.&#34;:
+        if read_check == &#34;1&#34;:
+            c_charts()
+        else: 
+            print(&#34;Data has not been read&#34;)
+            menu()
+    elif choice == &#34;6&#34; or choice == &#34;6.&#34; or choice == &#34;q&#34; or choice == &#34;quit&#34;:
+        sys.exit
+    else:
+        print(&#34;You must select an option 1-6&#34;)
+        print(&#34;Please try again&#34;)
+        menu()
+
+def read():
+    global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, read_check, data, counter
+    data = input(&#34;Please enter the path and name of your CSV file: &#34;)
+    # noah&#39;s path
+    # C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
+    # eb&#39;s path
+    # C:\Users\ebenezerz10\Documents\GitHub\CSCE110-Final-Project\grades.csv
+    #other computer
+    #C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
+    with open(data) as f:
+        read_check = &#34;1&#34;
+        data_read = csv.reader(f)  # reads file
+        next(data_read, None)
+        for row in data_read:
+            counter = counter + 1
+            student_report.append(row[0:23])
+            uin.append(row[0])
+            lab_m.append(row[1:7])
+            quiz_m.append(row[6:13])
+            ra_m.append(row[12:19])
+            exam_m.append(row[18:22])
+            project.append(row[22:23])
+        menu()
+        return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, read_check, data, counter
+def s_report():
+    student = input(&#34;Please enter the UIN of the student you would like to general a report for: &#34;)
+    if student in uin:
+        print(&#34;This is a valid UIN&#34;)
+    else:
+        print(&#34;This is not valid&#34;)
+    txt = open(f&#34;{student}.txt&#34;, &#34;w+&#34;)
+    print(&#34;Text file opened&#34;)
+    for row in student_report:
+        if student == row[0]:
+            # uin_for_row = row[0]
+            total = 0
+            lab_total = 0
+            quiz_total = 0
+            reading_total = 0
+            exam_total = 0
+            project_total = 0
+            for index in range(1, 6):
+                thisGrade = float(row[index])
+                lab_total = lab_total + thisGrade
+                total = total + lab_total * .25
+                lab_mean = lab_total / 6
+            for index in range(7, 12):
+                thisGrade = float(row[index])
+                quiz_total = quiz_total + thisGrade
+                total = total + quiz_total * .1
+                quiz_mean = quiz_total / 6
+            for index in range(13, 19):
+                thisGrade = float(row[index])
+                reading_total = reading_total + thisGrade
+                total = total + reading_total * .1
+                reading_mean = reading_total / 6
+            for index in range(20, 22):
+                thisGrade = float(row[index])
+                exam_total = exam_total + thisGrade
+                total = total + exam_total * .45
+                exam_mean = exam_total / 3
+            for index in range(20, 22):
+                thisGrade = float(row[index])
+                project_total = project_total + thisGrade
+                total = total + project_total * .1
+            total = total / 10
+            total = round(total, 1)
+            exam_mean = round(exam_mean, 1)
+            lab_mean = round(lab_mean, 1)
+            quiz_mean = round(quiz_mean, 1)
+            reading_mean = round(reading_mean, 1)
+            if total &gt;= 90:
+                letter_grade = &#34;A&#34;
+            elif 80 &lt;= total &lt; 90:
+                letter_grade = &#34;B&#34;
+            elif 70 &lt;= total &lt; 80:
+                letter_grade = &#34;C&#34;
+            elif 60 &lt;= total &lt; 70:
+                letter_grade = &#34;D&#34;
+            else:
+                letter_grade = &#34;F&#34;
+            txt.write(&#34;Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\nScore: {}%\nLetter grade: {}\n&#34;.format(exam_mean, lab_mean, quiz_mean, reading_mean, total, letter_grade))
+            txt.close
+            print(&#34;Your report has been created as a .txt file&#34;)
+    menu()
+def s_charts():
+    student = input(&#34;Please enter the UIN of the student you would like to general a report for: &#34;)
+    if student in uin:
+        print(&#34;This is a valid UIN&#34;)
+    else: 
+        print(&#34;This is not valid&#34;)
+    for row in student_report:
+        if student == row[0]:
+            current_directory = os.getcwd()
+            uin_directory = os.path.join(current_directory, f&#34;{student}&#34;)
+            if not os.path.exists(uin_directory):
+                os.makedirs(uin_directory)
+            #bar chart of labs
+            x_label = [&#39;Lab 1&#39;, &#39;Lab 2&#39;, &#39;Lab 3&#39;, &#39;Lab 4&#39;, &#39;Lab 5&#39;, &#39;Lab 6&#39;]
+            y_amount = row[1:7]
+            new_y_amount = [int(float(num)) for num in y_amount]
+            y_pos = np.arange(len(x_label))
+            print(&#34;Labs&#34;)
+            print(row)
+            print(y_amount)
+            #plt.bar(y_pos, y_amount, align=&#39;center&#39;, alpha=0.5)
+            plt.bar(x_label, new_y_amount)#, color=&#39;blue&#39;, align=&#39;center&#39;, alpha=0.5)
+            plt.xticks(y_pos, x_label)
+            plt.ylabel(&#39;Grade&#39;)
+            plt.xlabel(&#39;Lab Assignments&#39;)
+            plt.title(&#39;Bar chart of labs&#39;)
+            plt.savefig(f&#34;{uin_directory}/Labs Bar Chart.png&#34;)
+            print(&#39;Lab Bar Chart Saved&#39;)
+            plt.show()
+            plt.clf()
+            #bar chart of quizzes
+            x_label = (&#39;Quiz 1&#39;, &#39;Quiz 2&#39;, &#39;Quiz 3&#39;,&#39;Quiz 4&#39;,&#39;Quiz 5&#39;,&#39;Quiz 6&#39;)
+            y_amount = row[7:13]
+            new_y_amount = [int(float(num)) for num in y_amount]
+            y_pos = np.arange(len(x_label))
+            print(&#34;Quizes&#34;)
+            print(row)
+            print(y_amount)
+            #plt.bar(y_pos, y_amount, align=&#39;center&#39;, alpha=0.5)
+            plt.bar(x_label, new_y_amount)#, color=&#39;blue&#39;, align=&#39;center&#39;, alpha=0.5)
+            plt.xticks(y_pos, x_label)
+            plt.ylabel(&#39;Grade&#39;)
+            plt.xlabel(&#39;Quiz Assignments&#39;)
+            plt.title(&#39;Bar chart of quizs&#39;)
+            plt.savefig(f&#34;{uin_directory}/Quizs Bar Chart.png&#34;)
+            print(&#39;Lab Bar Chart Saved&#39;)
+            plt.show()
+            plt.clf()
+            #bar chart of reading activties
+            x_label = (&#39;RA 1&#39;, &#39;RA 2&#39;, &#39;RA 3&#39;,&#39;RA 4&#39;,&#39;RA 5&#39;,&#39;RA 6&#39;)
+            y_amount = row[13:19]
+            new_y_amount = [int(float(num)) for num in y_amount]
+            y_pos = np.arange(len(x_label))
+            print(&#34;RA&#34;)
+            print(row)
+            print(y_amount)
+            #plt.bar(y_pos, y_amount, align=&#39;center&#39;, alpha=0.5)
+            plt.bar(x_label, new_y_amount)#, color=&#39;blue&#39;, align=&#39;center&#39;, alpha=0.5)
+            plt.xticks(y_pos, x_label)
+            plt.ylabel(&#39;Grade&#39;)
+            plt.xlabel(&#39;Reading Activities&#39;)
+            plt.title(&#39;Bar chart of Reading Activties&#39;)
+            plt.savefig(f&#34;{uin_directory}/Reading Activities Bar Chart.png&#34;)
+            print(&#39;Lab Bar Chart Saved&#39;)
+            plt.show()
+            plt.clf()
+            #bar chart of exams
+            x_label = (&#39;Exam 1&#39;, &#39;Exam 2&#39;, &#39;Exam 3&#39;)
+            y_amount = row[19:22]
+            new_y_amount = [int(float(num)) for num in y_amount]
+            y_pos = np.arange(len(x_label))
+            print(&#34;Exams&#34;)
+            print(row)
+            print(y_amount)
+            #plt.bar(y_pos, y_amount, align=&#39;center&#39;, alpha=0.5)
+            plt.bar(x_label, new_y_amount)#, color=&#39;blue&#39;, align=&#39;center&#39;, alpha=0.5)
+            plt.xticks(y_pos, x_label)
+            plt.ylabel(&#39;Grade&#39;)
+            plt.xlabel(&#39;Exam #&#39;)
+            plt.title(&#39;Bar chart of Exams&#39;)
+            plt.savefig(f&#34;{uin_directory}/Exams Bar Chart.png&#34;)
+            plt.show()
+            print(&#39;Lab Bar Chart Saved&#39;)
+            plt.clf()
+    menu()
+
+def c_report():
+    res = []
+    for row in student_report:
+        score_total = 0
+
+        # uin_for_row = row[0]
+        total = 0
+        lab_total = 0
+        quiz_total = 0
+        reading_total = 0
+        exam_total = 0
+        project_total = 0
+        for index in range(1, 7):
+            thisGrade = float(row[index])
+            lab_total = lab_total + thisGrade
+            res_total = lab_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .25
+            lab_mean = lab_total / 6
+        l_total = total
+        for index in range(7, 13):
+            thisGrade = float(row[index])
+            quiz_total = quiz_total + thisGrade
+            res_total = quiz_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            quiz_mean = quiz_total / 6
+        q_total = total
+        for index in range(13, 19):
+            thisGrade = float(row[index])
+            reading_total = reading_total + thisGrade
+            res_total = reading_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            reading_mean = reading_total / 6
+        r_total = total
+        for index in range(19, 22):
+            thisGrade = float(row[index])
+            exam_total = exam_total + thisGrade
+            res_total = exam_total/300
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .45
+            exam_mean = exam_total 
+        e_total = total
+        for index in range(22,23):
+            thisGrade = float(row[index])
+            project_total = project_total + thisGrade
+            res_total = project_total/100
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            #print(thisGrade)
+        p_total = total
+        new_total = l_total+q_total+r_total+e_total+p_total
+        score_total = &#34;%.1f&#34; % new_total
+        res.append(score_total)
+    res_min = min(float(sub) for sub in res) 
+    res_max = max(float(sub) for sub in res) 
+    n = len(res) 
+    res.sort() 
+    
+    if n % 2 == 0: 
+        median1 =float(res[n//2])
+        median2 = float(res[n//2 - 1])
+        median = (median1 + median2)/2
+    else: 
+        median = res[n//2] 
+    get_sum = sum(map(float,res))
+    mean = get_sum / n
+    var = sum(pow(float(x)-mean,2) for x in res) / n
+    std =math.sqrt(var)
+    txt = open(&#39;report.txt&#39;,&#39;w+&#39;)
+    txt.write(&#34;Total number of student: {}\n&#34;
+              &#34;Minimum score: {}\n&#34;
+              &#34;Maximum score: {}\n&#34;
+              &#34;Medium score: {}\n&#34;
+              &#34;Mean score: {}\n&#34;
+              &#34;Standard deviation: {}\n&#34;.format(counter,res_min,res_max,median,round(mean,1),round(std,1)))
+    txt.close
+    print(&#34;The class report has been generated in report.txt file.&#34;)
+menu()
+
+def c_charts():
+    # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
+    res = []
+    for row in student_report:
+        score_total = 0
+
+        # uin_for_row = row[0]
+        total = 0
+        lab_total = 0
+        quiz_total = 0
+        reading_total = 0
+        exam_total = 0
+        project_total = 0
+        for index in range(1, 7):
+            thisGrade = float(row[index])
+            lab_total = lab_total + thisGrade
+            res_total = lab_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .25
+            lab_mean = lab_total / 6
+        l_total = total
+        for index in range(7, 13):
+            thisGrade = float(row[index])
+            quiz_total = quiz_total + thisGrade
+            res_total = quiz_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            quiz_mean = quiz_total / 6
+        q_total = total
+        for index in range(13, 19):
+            thisGrade = float(row[index])
+            reading_total = reading_total + thisGrade
+            res_total = reading_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            reading_mean = reading_total / 6
+        r_total = total
+        for index in range(19, 22):
+            thisGrade = float(row[index])
+            exam_total = exam_total + thisGrade
+            res_total = exam_total/300
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .45
+            exam_mean = exam_total
+        e_total = total
+        for index in range(22,23):
+            thisGrade = float(row[index])
+            project_total = project_total + thisGrade
+            res_total = project_total/100
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            #print(thisGrade)
+        p_total = total
+        new_total = l_total+q_total+r_total+e_total+p_total
+        score_total = &#34;%.1f&#34; % new_total
+        res.append(score_total)
+    print(res)
+    # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
+menu()
+
+&#34;&#34;&#34;  
+l = 477.5  79.6  19.9
+q = 422    70.3  7.03
+r = 464.25   77.4  7.74
+e = 170.5    56.8  25.56
+p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="project.c_charts"><code class="name flex">
+<span>def <span class="ident">c_charts</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def c_charts():
+    # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
+    res = []
+    for row in student_report:
+        score_total = 0
+
+        # uin_for_row = row[0]
+        total = 0
+        lab_total = 0
+        quiz_total = 0
+        reading_total = 0
+        exam_total = 0
+        project_total = 0
+        for index in range(1, 7):
+            thisGrade = float(row[index])
+            lab_total = lab_total + thisGrade
+            res_total = lab_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .25
+            lab_mean = lab_total / 6
+        l_total = total
+        for index in range(7, 13):
+            thisGrade = float(row[index])
+            quiz_total = quiz_total + thisGrade
+            res_total = quiz_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            quiz_mean = quiz_total / 6
+        q_total = total
+        for index in range(13, 19):
+            thisGrade = float(row[index])
+            reading_total = reading_total + thisGrade
+            res_total = reading_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            reading_mean = reading_total / 6
+        r_total = total
+        for index in range(19, 22):
+            thisGrade = float(row[index])
+            exam_total = exam_total + thisGrade
+            res_total = exam_total/300
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .45
+            exam_mean = exam_total
+        e_total = total
+        for index in range(22,23):
+            thisGrade = float(row[index])
+            project_total = project_total + thisGrade
+            res_total = project_total/100
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            #print(thisGrade)
+        p_total = total
+        new_total = l_total+q_total+r_total+e_total+p_total
+        score_total = &#34;%.1f&#34; % new_total
+        res.append(score_total)
+    print(res)</code></pre>
+</details>
+</dd>
+<dt id="project.c_report"><code class="name flex">
+<span>def <span class="ident">c_report</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def c_report():
+    res = []
+    for row in student_report:
+        score_total = 0
+
+        # uin_for_row = row[0]
+        total = 0
+        lab_total = 0
+        quiz_total = 0
+        reading_total = 0
+        exam_total = 0
+        project_total = 0
+        for index in range(1, 7):
+            thisGrade = float(row[index])
+            lab_total = lab_total + thisGrade
+            res_total = lab_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .25
+            lab_mean = lab_total / 6
+        l_total = total
+        for index in range(7, 13):
+            thisGrade = float(row[index])
+            quiz_total = quiz_total + thisGrade
+            res_total = quiz_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            quiz_mean = quiz_total / 6
+        q_total = total
+        for index in range(13, 19):
+            thisGrade = float(row[index])
+            reading_total = reading_total + thisGrade
+            res_total = reading_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            reading_mean = reading_total / 6
+        r_total = total
+        for index in range(19, 22):
+            thisGrade = float(row[index])
+            exam_total = exam_total + thisGrade
+            res_total = exam_total/300
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .45
+            exam_mean = exam_total 
+        e_total = total
+        for index in range(22,23):
+            thisGrade = float(row[index])
+            project_total = project_total + thisGrade
+            res_total = project_total/100
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            #print(thisGrade)
+        p_total = total
+        new_total = l_total+q_total+r_total+e_total+p_total
+        score_total = &#34;%.1f&#34; % new_total
+        res.append(score_total)
+    res_min = min(float(sub) for sub in res) 
+    res_max = max(float(sub) for sub in res) 
+    n = len(res) 
+    res.sort() 
+    
+    if n % 2 == 0: 
+        median1 =float(res[n//2])
+        median2 = float(res[n//2 - 1])
+        median = (median1 + median2)/2
+    else: 
+        median = res[n//2] 
+    get_sum = sum(map(float,res))
+    mean = get_sum / n
+    var = sum(pow(float(x)-mean,2) for x in res) / n
+    std =math.sqrt(var)
+    txt = open(&#39;report.txt&#39;,&#39;w+&#39;)
+    txt.write(&#34;Total number of student: {}\n&#34;
+              &#34;Minimum score: {}\n&#34;
+              &#34;Maximum score: {}\n&#34;
+              &#34;Medium score: {}\n&#34;
+              &#34;Mean score: {}\n&#34;
+              &#34;Standard deviation: {}\n&#34;.format(counter,res_min,res_max,median,round(mean,1),round(std,1)))
+    txt.close
+    print(&#34;The class report has been generated in report.txt file.&#34;)</code></pre>
+</details>
+</dd>
+<dt id="project.main"><code class="name flex">
+<span>def <span class="ident">main</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def main():
+    menu()</code></pre>
+</details>
+</dd>
+<dt id="project.menu"><code class="name flex">
+<span>def <span class="ident">menu</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def menu():
+    global read_check
+    print(&#34;*******************Main Menu*****************&#34;)
+    print(&#34;1. Read CSV file of grades&#34;)
+    print(&#34;2. Generate student report file&#34;)
+    print(&#34;3. Generate student report charts&#34;)
+    print(&#34;4. Generate class report file&#34;)
+    print(&#34;5. Generate class report charts&#34;)
+    print(&#34;6. Quit&#34;)
+    print(&#34;************************************************&#34;)
+    choice = input(&#34;Please chose your option: &#34;)
+    if choice == &#34;1&#34; or choice == &#34;1.&#34;:
+        read()
+    elif choice == &#34;2&#34; or choice == &#34;2.&#34;:
+        if read_check == &#34;1&#34;:
+            s_report()
+        else: 
+            print(&#34;Data has not been read&#34;)
+            menu()
+    elif choice == &#34;3&#34; or choice == &#34;3.&#34;:
+        if read_check == &#34;1&#34;:
+            s_charts()
+        else: 
+            print(&#34;Data has not been read&#34;)
+            menu()
+    elif choice == &#34;4&#34; or choice == &#34;4.&#34;:
+        if read_check == &#34;1&#34;:
+            c_report()
+        else: 
+            print(&#34;Data has not been read&#34;)
+            menu()
+    elif choice == &#34;5&#34; or choice == &#34;5.&#34;:
+        if read_check == &#34;1&#34;:
+            c_charts()
+        else: 
+            print(&#34;Data has not been read&#34;)
+            menu()
+    elif choice == &#34;6&#34; or choice == &#34;6.&#34; or choice == &#34;q&#34; or choice == &#34;quit&#34;:
+        sys.exit
+    else:
+        print(&#34;You must select an option 1-6&#34;)
+        print(&#34;Please try again&#34;)
+        menu()</code></pre>
+</details>
+</dd>
+<dt id="project.read"><code class="name flex">
+<span>def <span class="ident">read</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def read():
+    global student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, read_check, data, counter
+    data = input(&#34;Please enter the path and name of your CSV file: &#34;)
+    # noah&#39;s path
+    # C:\Users\noahw\OneDrive\Desktop\CSCE 110\Project\Data\grades.csv
+    # eb&#39;s path
+    # C:\Users\ebenezerz10\Documents\GitHub\CSCE110-Final-Project\grades.csv
+    #other computer
+    #C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
+    with open(data) as f:
+        read_check = &#34;1&#34;
+        data_read = csv.reader(f)  # reads file
+        next(data_read, None)
+        for row in data_read:
+            counter = counter + 1
+            student_report.append(row[0:23])
+            uin.append(row[0])
+            lab_m.append(row[1:7])
+            quiz_m.append(row[6:13])
+            ra_m.append(row[12:19])
+            exam_m.append(row[18:22])
+            project.append(row[22:23])
+        menu()
+        return student_report, uin, lab_m, quiz_m, ra_m, exam_m, project, read_check, data, counter</code></pre>
+</details>
+</dd>
+<dt id="project.s_charts"><code class="name flex">
+<span>def <span class="ident">s_charts</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def s_charts():
+    student = input(&#34;Please enter the UIN of the student you would like to general a report for: &#34;)
+    if student in uin:
+        print(&#34;This is a valid UIN&#34;)
+    else: 
+        print(&#34;This is not valid&#34;)
+    for row in student_report:
+        if student == row[0]:
+            current_directory = os.getcwd()
+            uin_directory = os.path.join(current_directory, f&#34;{student}&#34;)
+            if not os.path.exists(uin_directory):
+                os.makedirs(uin_directory)
+            #bar chart of labs
+            x_label = [&#39;Lab 1&#39;, &#39;Lab 2&#39;, &#39;Lab 3&#39;, &#39;Lab 4&#39;, &#39;Lab 5&#39;, &#39;Lab 6&#39;]
+            y_amount = row[1:7]
+            new_y_amount = [int(float(num)) for num in y_amount]
+            y_pos = np.arange(len(x_label))
+            print(&#34;Labs&#34;)
+            print(row)
+            print(y_amount)
+            #plt.bar(y_pos, y_amount, align=&#39;center&#39;, alpha=0.5)
+            plt.bar(x_label, new_y_amount)#, color=&#39;blue&#39;, align=&#39;center&#39;, alpha=0.5)
+            plt.xticks(y_pos, x_label)
+            plt.ylabel(&#39;Grade&#39;)
+            plt.xlabel(&#39;Lab Assignments&#39;)
+            plt.title(&#39;Bar chart of labs&#39;)
+            plt.savefig(f&#34;{uin_directory}/Labs Bar Chart.png&#34;)
+            print(&#39;Lab Bar Chart Saved&#39;)
+            plt.show()
+            plt.clf()
+            #bar chart of quizzes
+            x_label = (&#39;Quiz 1&#39;, &#39;Quiz 2&#39;, &#39;Quiz 3&#39;,&#39;Quiz 4&#39;,&#39;Quiz 5&#39;,&#39;Quiz 6&#39;)
+            y_amount = row[7:13]
+            new_y_amount = [int(float(num)) for num in y_amount]
+            y_pos = np.arange(len(x_label))
+            print(&#34;Quizes&#34;)
+            print(row)
+            print(y_amount)
+            #plt.bar(y_pos, y_amount, align=&#39;center&#39;, alpha=0.5)
+            plt.bar(x_label, new_y_amount)#, color=&#39;blue&#39;, align=&#39;center&#39;, alpha=0.5)
+            plt.xticks(y_pos, x_label)
+            plt.ylabel(&#39;Grade&#39;)
+            plt.xlabel(&#39;Quiz Assignments&#39;)
+            plt.title(&#39;Bar chart of quizs&#39;)
+            plt.savefig(f&#34;{uin_directory}/Quizs Bar Chart.png&#34;)
+            print(&#39;Lab Bar Chart Saved&#39;)
+            plt.show()
+            plt.clf()
+            #bar chart of reading activties
+            x_label = (&#39;RA 1&#39;, &#39;RA 2&#39;, &#39;RA 3&#39;,&#39;RA 4&#39;,&#39;RA 5&#39;,&#39;RA 6&#39;)
+            y_amount = row[13:19]
+            new_y_amount = [int(float(num)) for num in y_amount]
+            y_pos = np.arange(len(x_label))
+            print(&#34;RA&#34;)
+            print(row)
+            print(y_amount)
+            #plt.bar(y_pos, y_amount, align=&#39;center&#39;, alpha=0.5)
+            plt.bar(x_label, new_y_amount)#, color=&#39;blue&#39;, align=&#39;center&#39;, alpha=0.5)
+            plt.xticks(y_pos, x_label)
+            plt.ylabel(&#39;Grade&#39;)
+            plt.xlabel(&#39;Reading Activities&#39;)
+            plt.title(&#39;Bar chart of Reading Activties&#39;)
+            plt.savefig(f&#34;{uin_directory}/Reading Activities Bar Chart.png&#34;)
+            print(&#39;Lab Bar Chart Saved&#39;)
+            plt.show()
+            plt.clf()
+            #bar chart of exams
+            x_label = (&#39;Exam 1&#39;, &#39;Exam 2&#39;, &#39;Exam 3&#39;)
+            y_amount = row[19:22]
+            new_y_amount = [int(float(num)) for num in y_amount]
+            y_pos = np.arange(len(x_label))
+            print(&#34;Exams&#34;)
+            print(row)
+            print(y_amount)
+            #plt.bar(y_pos, y_amount, align=&#39;center&#39;, alpha=0.5)
+            plt.bar(x_label, new_y_amount)#, color=&#39;blue&#39;, align=&#39;center&#39;, alpha=0.5)
+            plt.xticks(y_pos, x_label)
+            plt.ylabel(&#39;Grade&#39;)
+            plt.xlabel(&#39;Exam #&#39;)
+            plt.title(&#39;Bar chart of Exams&#39;)
+            plt.savefig(f&#34;{uin_directory}/Exams Bar Chart.png&#34;)
+            plt.show()
+            print(&#39;Lab Bar Chart Saved&#39;)
+            plt.clf()
+    menu()</code></pre>
+</details>
+</dd>
+<dt id="project.s_report"><code class="name flex">
+<span>def <span class="ident">s_report</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def s_report():
+    student = input(&#34;Please enter the UIN of the student you would like to general a report for: &#34;)
+    if student in uin:
+        print(&#34;This is a valid UIN&#34;)
+    else:
+        print(&#34;This is not valid&#34;)
+    txt = open(f&#34;{student}.txt&#34;, &#34;w+&#34;)
+    print(&#34;Text file opened&#34;)
+    for row in student_report:
+        if student == row[0]:
+            # uin_for_row = row[0]
+            total = 0
+            lab_total = 0
+            quiz_total = 0
+            reading_total = 0
+            exam_total = 0
+            project_total = 0
+            for index in range(1, 6):
+                thisGrade = float(row[index])
+                lab_total = lab_total + thisGrade
+                total = total + lab_total * .25
+                lab_mean = lab_total / 6
+            for index in range(7, 12):
+                thisGrade = float(row[index])
+                quiz_total = quiz_total + thisGrade
+                total = total + quiz_total * .1
+                quiz_mean = quiz_total / 6
+            for index in range(13, 19):
+                thisGrade = float(row[index])
+                reading_total = reading_total + thisGrade
+                total = total + reading_total * .1
+                reading_mean = reading_total / 6
+            for index in range(20, 22):
+                thisGrade = float(row[index])
+                exam_total = exam_total + thisGrade
+                total = total + exam_total * .45
+                exam_mean = exam_total / 3
+            for index in range(20, 22):
+                thisGrade = float(row[index])
+                project_total = project_total + thisGrade
+                total = total + project_total * .1
+            total = total / 10
+            total = round(total, 1)
+            exam_mean = round(exam_mean, 1)
+            lab_mean = round(lab_mean, 1)
+            quiz_mean = round(quiz_mean, 1)
+            reading_mean = round(reading_mean, 1)
+            if total &gt;= 90:
+                letter_grade = &#34;A&#34;
+            elif 80 &lt;= total &lt; 90:
+                letter_grade = &#34;B&#34;
+            elif 70 &lt;= total &lt; 80:
+                letter_grade = &#34;C&#34;
+            elif 60 &lt;= total &lt; 70:
+                letter_grade = &#34;D&#34;
+            else:
+                letter_grade = &#34;F&#34;
+            txt.write(&#34;Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\nScore: {}%\nLetter grade: {}\n&#34;.format(exam_mean, lab_mean, quiz_mean, reading_mean, total, letter_grade))
+            txt.close
+            print(&#34;Your report has been created as a .txt file&#34;)
+    menu()</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="project.c_charts" href="#project.c_charts">c_charts</a></code></li>
+<li><code><a title="project.c_report" href="#project.c_report">c_report</a></code></li>
+<li><code><a title="project.main" href="#project.main">main</a></code></li>
+<li><code><a title="project.menu" href="#project.menu">menu</a></code></li>
+<li><code><a title="project.read" href="#project.read">read</a></code></li>
+<li><code><a title="project.s_charts" href="#project.s_charts">s_charts</a></code></li>
+<li><code><a title="project.s_report" href="#project.s_report">s_report</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
