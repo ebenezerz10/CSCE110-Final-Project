@@ -1,0 +1,6 @@
+Exams mean: 37.0
+Lab mean: 64.2
+Quizzes mean: 60.3
+Reading activites mean: 77.4
+Score: 70.0%
+Letter grade: C

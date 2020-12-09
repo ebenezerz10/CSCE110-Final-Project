@@ -1,5 +1,9 @@
-#mainmenu
+#File:    project.py
+#Author:  Noah Woinicki and Ebenezer Zabayor
+#Date:    11/23/2020
+#Email:  noahwoinicki@tamu.edu and ebenezer10@tamu.edu
 
+#imports
 import csv
 import sys
 import os
@@ -9,7 +13,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
-# Global Variable
+# Global Variables
 uin = []
 lab_m = []
 exam_m = []
