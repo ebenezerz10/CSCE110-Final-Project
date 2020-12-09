@@ -442,27 +442,27 @@ def c_charts():
     plt.ylabel('Count')
     plt.xlabel('Grade')
     plt.title('Class letter grade')
-    plt.savefig("class_charts")
+    plt.savefig("class_charts/class_bar_chart")
     print('Lab Bar Chart Saved')
     plt.show()
     plt.clf()
     ### Pie chart for grade
     fig = plt.figure(figsize = (10,7))
     plt.pie(num_total,labels= grade_letter)
-    plt.savefig('class_charts')
+    plt.savefig("class_charts/class_pie_chart")
     plt.title("Class letter grades")
     print('Lab Pie Chart Saved')
     plt.show()
     plt.clf()
+    menu()
+
+    # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
+    
+
 
 
     # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
-    menu()
-
-
-
-    # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
-    menu()
+menu()
 
 """  
 l = 477.5  79.6  19.9
