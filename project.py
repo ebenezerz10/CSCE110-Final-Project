@@ -474,10 +474,3 @@ def c_charts():
 
     # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
 menu()
-
-"""  
-l = 477.5  79.6  19.9
-q = 422    70.3  7.03
-r = 464.25   77.4  7.74
-e = 170.5    56.8  25.56
-p = 88       8.8   .88"""

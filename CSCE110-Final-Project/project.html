@@ -43,20 +43,31 @@ import math
 
 # Global Variables
 uin = []
+&#34;&#34;&#34;This holds the uin&#34;&#34;&#34;
 lab_m = []
+&#34;&#34;&#34;Lab mean&#34;&#34;&#34;
 exam_m = []
+&#34;&#34;&#34;Exam mena&#34;&#34;&#34;
 quiz_m = []
+&#34;&#34;&#34;Quiz mean&#34;&#34;&#34;
 ra_m = []
+&#34;&#34;&#34;Reading activity mena&#34;&#34;&#34;
 score = []
+&#34;&#34;&#34;coutner score&#34;&#34;&#34;
 grade = []
+&#34;&#34;&#34;grade&#34;&#34;&#34;
 counter = 0
+&#34;&#34;&#34;another counter&#34;&#34;&#34;
 project = []
 student_report = []
+&#34;&#34;&#34;All our data from csv read&#34;&#34;&#34;
 read_check = 0
+&#34;&#34;&#34;checks if the user has first read the csv file before being able to chose options 2-6&#34;&#34;&#34;
 
 def menu():
     &#34;&#34;&#34;This function is the user interface of the project and allows the user to chose what grading information they want the program to produce.&#34;&#34;&#34;
     global read_check
+    &#34;&#34;&#34;checks if the user has first read the csv file before being able to chose options 2-6&#34;&#34;&#34;
     print(&#34;*******************Main Menu*****************&#34;)
     print(&#34;1. Read CSV file of grades&#34;)
     print(&#34;2. Generate student report file&#34;)
@@ -276,7 +287,7 @@ def s_charts():
     menu()
 
 def c_report():
-    &#34;&#34;&#34;&#34;This function creates and saves a text document report for the class&#34;&#34;&#34;
+    &#34;&#34;&#34;This function creates and saves a text document report for the class&#34;&#34;&#34;
     res = []
     for row in student_report:
         score_total = 0
@@ -295,7 +306,6 @@ def c_report():
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .25
-            lab_mean = lab_total / 6
         l_total = total
         for index in range(7, 13):
             thisGrade = float(row[index])
@@ -304,7 +314,6 @@ def c_report():
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .1
-            quiz_mean = quiz_total / 6
         q_total = total
         for index in range(13, 19):
             thisGrade = float(row[index])
@@ -313,7 +322,6 @@ def c_report():
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .1
-            reading_mean = reading_total / 6
         r_total = total
         for index in range(19, 22):
             thisGrade = float(row[index])
@@ -322,7 +330,6 @@ def c_report():
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .45
-            exam_mean = exam_total 
         e_total = total
         for index in range(22,23):
             thisGrade = float(row[index])
@@ -360,12 +367,19 @@ def c_report():
               &#34;Standard deviation: {}\n&#34;.format(counter,res_min,res_max,median,round(mean,1),round(std,1)))
     txt.close
     print(&#34;The class report has been generated in report.txt file.&#34;)
-menu()
+    menu()
 
 def c_charts():
-    &#34;&#34;&#34;&#34;This function creates and saves a png file bar chart report for the class&#34;&#34;&#34;
-    # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
+    &#34;&#34;&#34;This function creates and saves a png file bar chart report for the class&#34;&#34;&#34;
+   # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
     res = []
+    grades = []
+    A = []
+    B = []
+    C = []
+    D = []
+    F = []
+    num_total = []
     for row in student_report:
         score_total = 0
 
@@ -379,52 +393,113 @@ def c_charts():
         for index in range(1, 7):
             thisGrade = float(row[index])
             lab_total = lab_total + thisGrade
-            res_total = lab_total/600
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = lab_total / 600
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .25
-            lab_mean = lab_total / 6
         l_total = total
         for index in range(7, 13):
             thisGrade = float(row[index])
             quiz_total = quiz_total + thisGrade
-            res_total = quiz_total/600
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = quiz_total / 600
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .1
-            quiz_mean = quiz_total / 6
         q_total = total
         for index in range(13, 19):
             thisGrade = float(row[index])
             reading_total = reading_total + thisGrade
-            res_total = reading_total/600
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = reading_total / 600
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .1
-            reading_mean = reading_total / 6
         r_total = total
         for index in range(19, 22):
             thisGrade = float(row[index])
             exam_total = exam_total + thisGrade
-            res_total = exam_total/300
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = exam_total / 300
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .45
-            exam_mean = exam_total
         e_total = total
-        for index in range(22,23):
+        for index in range(22, 23):
             thisGrade = float(row[index])
             project_total = project_total + thisGrade
-            res_total = project_total/100
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = project_total / 100
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .1
-            #print(thisGrade)
+            # print(thisGrade)
         p_total = total
-        new_total = l_total+q_total+r_total+e_total+p_total
+        new_total = l_total + q_total + r_total + e_total + p_total
         score_total = &#34;%.1f&#34; % new_total
         res.append(score_total)
-    print(res)
+        for num in res:
+            if float(num) &gt;= 90:
+                letter_grade = &#34;A&#34;
+            elif 80 &lt;= float(num) &lt; 90:
+                letter_grade = &#34;B&#34;
+            elif 70 &lt;= float(num) &lt; 80:
+                letter_grade = &#34;C&#34;
+            elif 60 &lt;= float(num) &lt; 70:
+                letter_grade = &#34;D&#34;
+            elif float(num) &lt; 60:
+                letter_grade = &#34;F&#34;
+        grades.append(letter_grade)
+    for letter in grades:
+        if letter == &#39;A&#39;:
+            A.append(letter)
+        if letter == &#39;B&#39;:
+            B.append(letter)
+        if letter == &#39;C&#39;:
+            C.append(letter)
+        if letter == &#39;D&#39;:
+            D.append(letter)
+        if letter == &#39;F&#39;:
+            F.append(letter)
+    A_len = len(A)
+    num_total.append(A_len)
+    B_len = len(B)
+    num_total.append(B_len)
+    C_len = len(C)
+    num_total.append(C_len)
+    D_len = len(D)
+    num_total.append(D_len)
+    F_len = len(F)
+    num_total.append(F_len)
+    current_directory = os.getcwd()
+    class_charts = os.path.join(current_directory, &#34;class_charts&#34;)
+    if not os.path.exists(class_charts):
+        os.makedirs(class_charts)
+    # bar chart of labs
+    grade_letter = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;F&#39;]
+    y_amount = num_total
+    value = [int(float(num)) for num in y_amount]
+    y_pos = np.arange(len(grade_letter))
+    plt.bar(grade_letter, value)
+    plt.xticks(y_pos, grade_letter)
+    plt.ylabel(&#39;Count&#39;)
+    plt.xlabel(&#39;Grade&#39;)
+    plt.title(&#39;Class letter grade&#39;)
+    plt.savefig(&#34;class_charts/class_bar_chart&#34;)
+    print(&#39;Lab Bar Chart Saved&#39;)
+    plt.show()
+    plt.clf()
+    ### Pie chart for grade
+    fig = plt.figure(figsize = (10,7))
+    plt.pie(num_total,labels= grade_letter)
+    plt.savefig(&#34;class_charts/class_pie_chart&#34;)
+    plt.title(&#34;Class letter grades&#34;)
+    print(&#39;Lab Pie Chart Saved&#39;)
+    plt.show()
+    plt.clf()
+    menu()
+
+    # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
+    
+
+
+
     # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
 menu()
 
@@ -439,6 +514,49 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
 <section>
 </section>
 <section>
+<h2 class="section-title" id="header-variables">Global variables</h2>
+<dl>
+<dt id="project.counter"><code class="name">var <span class="ident">counter</span></code></dt>
+<dd>
+<div class="desc"><p>another counter</p></div>
+</dd>
+<dt id="project.exam_m"><code class="name">var <span class="ident">exam_m</span></code></dt>
+<dd>
+<div class="desc"><p>Exam mena</p></div>
+</dd>
+<dt id="project.grade"><code class="name">var <span class="ident">grade</span></code></dt>
+<dd>
+<div class="desc"><p>grade</p></div>
+</dd>
+<dt id="project.lab_m"><code class="name">var <span class="ident">lab_m</span></code></dt>
+<dd>
+<div class="desc"><p>Lab mean</p></div>
+</dd>
+<dt id="project.quiz_m"><code class="name">var <span class="ident">quiz_m</span></code></dt>
+<dd>
+<div class="desc"><p>Quiz mean</p></div>
+</dd>
+<dt id="project.ra_m"><code class="name">var <span class="ident">ra_m</span></code></dt>
+<dd>
+<div class="desc"><p>Reading activity mena</p></div>
+</dd>
+<dt id="project.read_check"><code class="name">var <span class="ident">read_check</span></code></dt>
+<dd>
+<div class="desc"><p>checks if the user has first read the csv file before being able to chose options 2-6</p></div>
+</dd>
+<dt id="project.score"><code class="name">var <span class="ident">score</span></code></dt>
+<dd>
+<div class="desc"><p>coutner score</p></div>
+</dd>
+<dt id="project.student_report"><code class="name">var <span class="ident">student_report</span></code></dt>
+<dd>
+<div class="desc"><p>All our data from csv read</p></div>
+</dd>
+<dt id="project.uin"><code class="name">var <span class="ident">uin</span></code></dt>
+<dd>
+<div class="desc"><p>This holds the uin</p></div>
+</dd>
+</dl>
 </section>
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
@@ -447,15 +565,22 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
 <span>def <span class="ident">c_charts</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>"This function creates and saves a png file bar chart report for the class</p></div>
+<div class="desc"><p>This function creates and saves a png file bar chart report for the class</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def c_charts():
-    &#34;&#34;&#34;&#34;This function creates and saves a png file bar chart report for the class&#34;&#34;&#34;
-    # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
+    &#34;&#34;&#34;This function creates and saves a png file bar chart report for the class&#34;&#34;&#34;
+   # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
     res = []
+    grades = []
+    A = []
+    B = []
+    C = []
+    D = []
+    F = []
+    num_total = []
     for row in student_report:
         score_total = 0
 
@@ -469,65 +594,120 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
         for index in range(1, 7):
             thisGrade = float(row[index])
             lab_total = lab_total + thisGrade
-            res_total = lab_total/600
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = lab_total / 600
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .25
-            lab_mean = lab_total / 6
         l_total = total
         for index in range(7, 13):
             thisGrade = float(row[index])
             quiz_total = quiz_total + thisGrade
-            res_total = quiz_total/600
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = quiz_total / 600
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .1
-            quiz_mean = quiz_total / 6
         q_total = total
         for index in range(13, 19):
             thisGrade = float(row[index])
             reading_total = reading_total + thisGrade
-            res_total = reading_total/600
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = reading_total / 600
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .1
-            reading_mean = reading_total / 6
         r_total = total
         for index in range(19, 22):
             thisGrade = float(row[index])
             exam_total = exam_total + thisGrade
-            res_total = exam_total/300
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = exam_total / 300
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .45
-            exam_mean = exam_total
         e_total = total
-        for index in range(22,23):
+        for index in range(22, 23):
             thisGrade = float(row[index])
             project_total = project_total + thisGrade
-            res_total = project_total/100
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = project_total / 100
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .1
-            #print(thisGrade)
+            # print(thisGrade)
         p_total = total
-        new_total = l_total+q_total+r_total+e_total+p_total
+        new_total = l_total + q_total + r_total + e_total + p_total
         score_total = &#34;%.1f&#34; % new_total
         res.append(score_total)
-    print(res)</code></pre>
+        for num in res:
+            if float(num) &gt;= 90:
+                letter_grade = &#34;A&#34;
+            elif 80 &lt;= float(num) &lt; 90:
+                letter_grade = &#34;B&#34;
+            elif 70 &lt;= float(num) &lt; 80:
+                letter_grade = &#34;C&#34;
+            elif 60 &lt;= float(num) &lt; 70:
+                letter_grade = &#34;D&#34;
+            elif float(num) &lt; 60:
+                letter_grade = &#34;F&#34;
+        grades.append(letter_grade)
+    for letter in grades:
+        if letter == &#39;A&#39;:
+            A.append(letter)
+        if letter == &#39;B&#39;:
+            B.append(letter)
+        if letter == &#39;C&#39;:
+            C.append(letter)
+        if letter == &#39;D&#39;:
+            D.append(letter)
+        if letter == &#39;F&#39;:
+            F.append(letter)
+    A_len = len(A)
+    num_total.append(A_len)
+    B_len = len(B)
+    num_total.append(B_len)
+    C_len = len(C)
+    num_total.append(C_len)
+    D_len = len(D)
+    num_total.append(D_len)
+    F_len = len(F)
+    num_total.append(F_len)
+    current_directory = os.getcwd()
+    class_charts = os.path.join(current_directory, &#34;class_charts&#34;)
+    if not os.path.exists(class_charts):
+        os.makedirs(class_charts)
+    # bar chart of labs
+    grade_letter = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;, &#39;F&#39;]
+    y_amount = num_total
+    value = [int(float(num)) for num in y_amount]
+    y_pos = np.arange(len(grade_letter))
+    plt.bar(grade_letter, value)
+    plt.xticks(y_pos, grade_letter)
+    plt.ylabel(&#39;Count&#39;)
+    plt.xlabel(&#39;Grade&#39;)
+    plt.title(&#39;Class letter grade&#39;)
+    plt.savefig(&#34;class_charts/class_bar_chart&#34;)
+    print(&#39;Lab Bar Chart Saved&#39;)
+    plt.show()
+    plt.clf()
+    ### Pie chart for grade
+    fig = plt.figure(figsize = (10,7))
+    plt.pie(num_total,labels= grade_letter)
+    plt.savefig(&#34;class_charts/class_pie_chart&#34;)
+    plt.title(&#34;Class letter grades&#34;)
+    print(&#39;Lab Pie Chart Saved&#39;)
+    plt.show()
+    plt.clf()
+    menu()</code></pre>
 </details>
 </dd>
 <dt id="project.c_report"><code class="name flex">
 <span>def <span class="ident">c_report</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>"This function creates and saves a text document report for the class</p></div>
+<div class="desc"><p>This function creates and saves a text document report for the class</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">def c_report():
-    &#34;&#34;&#34;&#34;This function creates and saves a text document report for the class&#34;&#34;&#34;
+    &#34;&#34;&#34;This function creates and saves a text document report for the class&#34;&#34;&#34;
     res = []
     for row in student_report:
         score_total = 0
@@ -546,7 +726,6 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .25
-            lab_mean = lab_total / 6
         l_total = total
         for index in range(7, 13):
             thisGrade = float(row[index])
@@ -555,7 +734,6 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .1
-            quiz_mean = quiz_total / 6
         q_total = total
         for index in range(13, 19):
             thisGrade = float(row[index])
@@ -564,7 +742,6 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .1
-            reading_mean = reading_total / 6
         r_total = total
         for index in range(19, 22):
             thisGrade = float(row[index])
@@ -573,7 +750,6 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .45
-            exam_mean = exam_total 
         e_total = total
         for index in range(22,23):
             thisGrade = float(row[index])
@@ -610,7 +786,8 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
               &#34;Mean score: {}\n&#34;
               &#34;Standard deviation: {}\n&#34;.format(counter,res_min,res_max,median,round(mean,1),round(std,1)))
     txt.close
-    print(&#34;The class report has been generated in report.txt file.&#34;)</code></pre>
+    print(&#34;The class report has been generated in report.txt file.&#34;)
+    menu()</code></pre>
 </details>
 </dd>
 <dt id="project.menu"><code class="name flex">
@@ -625,6 +802,7 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
 <pre><code class="python">def menu():
     &#34;&#34;&#34;This function is the user interface of the project and allows the user to chose what grading information they want the program to produce.&#34;&#34;&#34;
     global read_check
+    &#34;&#34;&#34;checks if the user has first read the csv file before being able to chose options 2-6&#34;&#34;&#34;
     print(&#34;*******************Main Menu*****************&#34;)
     print(&#34;1. Read CSV file of grades&#34;)
     print(&#34;2. Generate student report file&#34;)
@@ -885,6 +1063,20 @@ p = 88       8.8   .88&#34;&#34;&#34;</code></pre>
 <ul></ul>
 </div>
 <ul id="index">
+<li><h3><a href="#header-variables">Global variables</a></h3>
+<ul class="two-column">
+<li><code><a title="project.counter" href="#project.counter">counter</a></code></li>
+<li><code><a title="project.exam_m" href="#project.exam_m">exam_m</a></code></li>
+<li><code><a title="project.grade" href="#project.grade">grade</a></code></li>
+<li><code><a title="project.lab_m" href="#project.lab_m">lab_m</a></code></li>
+<li><code><a title="project.quiz_m" href="#project.quiz_m">quiz_m</a></code></li>
+<li><code><a title="project.ra_m" href="#project.ra_m">ra_m</a></code></li>
+<li><code><a title="project.read_check" href="#project.read_check">read_check</a></code></li>
+<li><code><a title="project.score" href="#project.score">score</a></code></li>
+<li><code><a title="project.student_report" href="#project.student_report">student_report</a></code></li>
+<li><code><a title="project.uin" href="#project.uin">uin</a></code></li>
+</ul>
+</li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="two-column">
 <li><code><a title="project.c_charts" href="#project.c_charts">c_charts</a></code></li>
