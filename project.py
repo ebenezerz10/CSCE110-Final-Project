@@ -327,7 +327,7 @@ def c_report():
 menu()
 
 def c_charts():
-    pass
+    # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
     res = []
     for row in student_report:
         score_total = 0
