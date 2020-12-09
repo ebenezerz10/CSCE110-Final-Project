@@ -331,6 +331,8 @@ def c_report():
               "Standard deviation: {}\n".format(counter,res_min,res_max,median,round(mean,1),round(std,1)))
     txt.close
     print("The class report has been generated in report.txt file.")
+    menu()
+
 
 #C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
 def c_charts():
