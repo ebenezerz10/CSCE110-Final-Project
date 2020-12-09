@@ -322,13 +322,15 @@ def c_report():
     mean = get_sum / n
     var = sum(pow(float(x)-mean,2) for x in res) / n
     std =math.sqrt(var)
-    txt = open('')
-    print("Total numebr of students: {}".format(counter))
-    print("Minimum score: {}".format(res_min))
-    print("Maximum score: {}".format(res_max))
-    print("Medium score: {}".format(median))
-    print("Mean score: {}".format(round(mean,1)))
-    print("Standard deviation: {}".format(round(std,1)))
+    txt = open('report.txt','w+')
+    txt.write("Total number of student: {}\n"
+              "Minimum score: {}\n"
+              "Maximum score: {}\n"
+              "Medium score: {}\n"
+              "Mean score: {}\n"
+              "Standard deviation: {}\n".format(counter,res_min,res_max,median,round(mean,1),round(std,1)))
+    txt.close
+    print("The class report has been generated in report.txt file.")
 
 #C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
 def c_charts():
