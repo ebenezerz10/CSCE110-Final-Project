@@ -15,20 +15,31 @@ import math
 
 # Global Variables
 uin = []
+"""This holds the uin"""
 lab_m = []
+"""Lab mean"""
 exam_m = []
+"""Exam mena"""
 quiz_m = []
+"""Quiz mean"""
 ra_m = []
+"""Reading activity mena"""
 score = []
+"""coutner score"""
 grade = []
+"""grade"""
 counter = 0
+"""another counter"""
 project = []
 student_report = []
+"""All our data from csv read"""
 read_check = 0
+"""checks if the user has first read the csv file before being able to chose options 2-6"""
 
 def menu():
     """This function is the user interface of the project and allows the user to chose what grading information they want the program to produce."""
     global read_check
+    """checks if the user has first read the csv file before being able to chose options 2-6"""
     print("*******************Main Menu*****************")
     print("1. Read CSV file of grades")
     print("2. Generate student report file")
