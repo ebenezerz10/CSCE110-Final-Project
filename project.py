@@ -156,8 +156,6 @@ def s_report():
             txt.close
             print("Your report has been created as a .txt file")
             menu()
-    print(total)
-
 def s_charts():
     student = input("Please enter the UIN of the student you would like to general a report for: ")
     if student in uin:
@@ -331,9 +329,7 @@ def c_report():
               "Standard deviation: {}\n".format(counter,res_min,res_max,median,round(mean,1),round(std,1)))
     txt.close
     print("The class report has been generated in report.txt file.")
-    menu()
-
-
+menu()
 #C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
 def c_charts():
     pass
