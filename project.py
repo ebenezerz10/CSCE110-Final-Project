@@ -328,7 +328,7 @@ def c_report():
               "Standard deviation: {}\n".format(counter,res_min,res_max,median,round(mean,1),round(std,1)))
     txt.close
     print("The class report has been generated in report.txt file.")
-menu()
+    menu()
 
 def c_charts():
     """This function creates and saves a png file bar chart report for the class"""
@@ -388,6 +388,7 @@ def c_charts():
         score_total = "%.1f" % new_total
         res.append(score_total)
     print(res)
+    menu()
     # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
 menu()
 
