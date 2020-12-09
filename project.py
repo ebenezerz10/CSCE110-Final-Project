@@ -150,9 +150,7 @@ def s_report():
                 letter_grade = "D"
             else:
                 letter_grade = "F"
-            txt.write(
-                "Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\nScore: {}%\nLetter grade: {}\n".format(
-                    exam_mean, lab_mean, quiz_mean, reading_mean, total, letter_grade))
+            txt.write("Exams mean: {}\nLab mean: {}\nQuizzes mean: {}\nReading activites mean: {}\nScore: {}%\nLetter grade: {}\n".format(exam_mean, lab_mean, quiz_mean, reading_mean, total, letter_grade))
             txt.close
             print("Your report has been created as a .txt file")
     menu()
