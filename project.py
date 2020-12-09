@@ -4,9 +4,9 @@ import csv
 import sys
 import os
 import pathlib
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 #import matplotlib.pyplot as plt;plt.rcdefaults()
-import numpy as np
+#import numpy as np
 
 # Global Variable
 uin = []
@@ -291,16 +291,25 @@ def c_report():
         new_total = l_total+q_total+r_total+e_total+p_total
         score_total = "%.1f" % new_total
         res.append(score_total)
-        print(res)
     res_min = min(float(sub) for sub in res) 
     res_max = max(float(sub) for sub in res) 
-    #mean = 
+    n = len(res) 
+    res.sort() 
+    
+    if n % 2 == 0: 
+        median1 =float(res[n//2])
+        median2 = float(res[n//2 - 1])
+        median = (median1 + median2)/2
+    else: 
+        median = res[n//2] 
+    get_sum = sum(map(float,res))
+    mean = get_sum / n
     #std =
     print("Total numebr of students: {}".format(counter))
     print("Minimum score: {}".format(res_min))
     print("Maximum score: {}".format(res_max))
-    print("Medium score: {}")
-    print("Mean score: {}")
+    print("Medium score: {}".format(median))
+    print("Mean score: {}".format(round(mean,1)))
     print("Standard deviation: {}")
 
 def c_charts():
