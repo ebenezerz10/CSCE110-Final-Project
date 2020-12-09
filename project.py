@@ -155,7 +155,7 @@ def s_report():
                     exam_mean, lab_mean, quiz_mean, reading_mean, total, letter_grade))
             txt.close
             print("Your report has been created as a .txt file")
-            menu()
+    menu()
 def s_charts():
     student = input("Please enter the UIN of the student you would like to general a report for: ")
     if student in uin:
@@ -330,10 +330,70 @@ def c_report():
     txt.close
     print("The class report has been generated in report.txt file.")
 menu()
-#C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
+
 def c_charts():
     pass
+    res = []
+    for row in student_report:
+        score_total = 0
 
+        # uin_for_row = row[0]
+        total = 0
+        lab_total = 0
+        quiz_total = 0
+        reading_total = 0
+        exam_total = 0
+        project_total = 0
+        for index in range(1, 7):
+            thisGrade = float(row[index])
+            lab_total = lab_total + thisGrade
+            res_total = lab_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .25
+            lab_mean = lab_total / 6
+        l_total = total
+        for index in range(7, 13):
+            thisGrade = float(row[index])
+            quiz_total = quiz_total + thisGrade
+            res_total = quiz_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            quiz_mean = quiz_total / 6
+        q_total = total
+        for index in range(13, 19):
+            thisGrade = float(row[index])
+            reading_total = reading_total + thisGrade
+            res_total = reading_total/600
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            reading_mean = reading_total / 6
+        r_total = total
+        for index in range(19, 22):
+            thisGrade = float(row[index])
+            exam_total = exam_total + thisGrade
+            res_total = exam_total/300
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .45
+            exam_mean = exam_total
+        e_total = total
+        for index in range(22,23):
+            thisGrade = float(row[index])
+            project_total = project_total + thisGrade
+            res_total = project_total/100
+            sub_total = res_total*100
+            sub_total = round(sub_total,1)
+            total = sub_total * .1
+            #print(thisGrade)
+        p_total = total
+        new_total = l_total+q_total+r_total+e_total+p_total
+        score_total = "%.1f" % new_total
+        res.append(score_total)
+    print(res)
+    # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
 menu()
 
 """  
