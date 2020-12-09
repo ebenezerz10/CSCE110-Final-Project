@@ -182,11 +182,10 @@ def s_charts():
             plt.ylabel('Grade')
             plt.xlabel('Lab Assignments')
             plt.title('Bar chart of labs')
-            plt.show()
             plt.savefig(f"{uin_directory}/Labs Bar Chart.png")
             print('Lab Bar Chart Saved')
+            plt.show()
             plt.clf()
-
             #bar chart of quizzes
             x_label = ('Quiz 1', 'Quiz 2', 'Quiz 3','Quiz 4','Quiz 5','Quiz 6')
             y_amount = row[7:13]
@@ -201,11 +200,10 @@ def s_charts():
             plt.ylabel('Grade')
             plt.xlabel('Quiz Assignments')
             plt.title('Bar chart of quizs')
-            plt.show()
             plt.savefig(f"{uin_directory}/Quizs Bar Chart.png")
             print('Lab Bar Chart Saved')
+            plt.show()
             plt.clf()
-
             #bar chart of reading activties
             x_label = ('RA 1', 'RA 2', 'RA 3','RA 4','RA 5','RA 6')
             y_amount = row[13:19]
@@ -220,11 +218,10 @@ def s_charts():
             plt.ylabel('Grade')
             plt.xlabel('Reading Activities')
             plt.title('Bar chart of Reading Activties')
-            plt.show()
             plt.savefig(f"{uin_directory}/Reading Activities Bar Chart.png")
             print('Lab Bar Chart Saved')
+            plt.show()
             plt.clf()
-
             #bar chart of exams
             x_label = ('Exam 1', 'Exam 2', 'Exam 3')
             y_amount = row[19:22]
@@ -239,8 +236,8 @@ def s_charts():
             plt.ylabel('Grade')
             plt.xlabel('Exam #')
             plt.title('Bar chart of Exams')
-            plt.show()
             plt.savefig(f"{uin_directory}/Exams Bar Chart.png")
+            plt.show()
             print('Lab Bar Chart Saved')
             plt.clf()
     menu()
