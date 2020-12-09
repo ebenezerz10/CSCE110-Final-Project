@@ -267,7 +267,6 @@ def c_report():
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .25
-            lab_mean = lab_total / 6
         l_total = total
         for index in range(7, 13):
             thisGrade = float(row[index])
@@ -276,7 +275,6 @@ def c_report():
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .1
-            quiz_mean = quiz_total / 6
         q_total = total
         for index in range(13, 19):
             thisGrade = float(row[index])
@@ -285,7 +283,6 @@ def c_report():
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .1
-            reading_mean = reading_total / 6
         r_total = total
         for index in range(19, 22):
             thisGrade = float(row[index])
@@ -294,7 +291,6 @@ def c_report():
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .45
-            exam_mean = exam_total 
         e_total = total
         for index in range(22,23):
             thisGrade = float(row[index])
@@ -340,7 +336,6 @@ def c_charts():
     res = []
     for row in student_report:
         score_total = 0
-
         # uin_for_row = row[0]
         total = 0
         lab_total = 0
@@ -355,7 +350,6 @@ def c_charts():
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .25
-            lab_mean = lab_total / 6
         l_total = total
         for index in range(7, 13):
             thisGrade = float(row[index])
@@ -364,7 +358,6 @@ def c_charts():
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .1
-            quiz_mean = quiz_total / 6
         q_total = total
         for index in range(13, 19):
             thisGrade = float(row[index])
@@ -373,7 +366,6 @@ def c_charts():
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .1
-            reading_mean = reading_total / 6
         r_total = total
         for index in range(19, 22):
             thisGrade = float(row[index])
@@ -382,7 +374,6 @@ def c_charts():
             sub_total = res_total*100
             sub_total = round(sub_total,1)
             total = sub_total * .45
-            exam_mean = exam_total
         e_total = total
         for index in range(22,23):
             thisGrade = float(row[index])
