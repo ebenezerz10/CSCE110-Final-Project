@@ -334,8 +334,16 @@ def c_charts():
     """This function creates and saves a png file bar chart report for the class"""
     # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
     res = []
+    grades = []
+    A = []
+    B = []
+    C = []
+    D = []
+    F = []
+    num_total = []
     for row in student_report:
         score_total = 0
+
         # uin_for_row = row[0]
         total = 0
         lab_total = 0
@@ -346,51 +354,104 @@ def c_charts():
         for index in range(1, 7):
             thisGrade = float(row[index])
             lab_total = lab_total + thisGrade
-            res_total = lab_total/600
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = lab_total / 600
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .25
         l_total = total
         for index in range(7, 13):
             thisGrade = float(row[index])
             quiz_total = quiz_total + thisGrade
-            res_total = quiz_total/600
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = quiz_total / 600
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .1
         q_total = total
         for index in range(13, 19):
             thisGrade = float(row[index])
             reading_total = reading_total + thisGrade
-            res_total = reading_total/600
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = reading_total / 600
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .1
         r_total = total
         for index in range(19, 22):
             thisGrade = float(row[index])
             exam_total = exam_total + thisGrade
-            res_total = exam_total/300
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = exam_total / 300
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .45
         e_total = total
-        for index in range(22,23):
+        for index in range(22, 23):
             thisGrade = float(row[index])
             project_total = project_total + thisGrade
-            res_total = project_total/100
-            sub_total = res_total*100
-            sub_total = round(sub_total,1)
+            res_total = project_total / 100
+            sub_total = res_total * 100
+            sub_total = round(sub_total, 1)
             total = sub_total * .1
-            #print(thisGrade)
+            # print(thisGrade)
         p_total = total
-        new_total = l_total+q_total+r_total+e_total+p_total
+        new_total = l_total + q_total + r_total + e_total + p_total
         score_total = "%.1f" % new_total
         res.append(score_total)
-    print(res)
-    menu()
+        for num in res:
+            if float(num) >= 90:
+                letter_grade = "A"
+            elif 80 <= float(num) < 90:
+                letter_grade = "B"
+            elif 70 <= float(num) < 80:
+                letter_grade = "C"
+            elif 60 <= float(num) < 70:
+                letter_grade = "D"
+            elif float(num) < 60:
+                letter_grade = "F"
+        grades.append(letter_grade)
+    for letter in grades:
+        if letter == 'A':
+            A.append(letter)
+        if letter == 'B':
+            B.append(letter)
+        if letter == 'C':
+            C.append(letter)
+        if letter == 'D':
+            D.append(letter)
+        if letter == 'F':
+            F.append(letter)
+    A_len = len(A)
+    num_total.append(A_len)
+    B_len = len(B)
+    num_total.append(B_len)
+    C_len = len(C)
+    num_total.append(C_len)
+    D_len = len(D)
+    num_total.append(D_len)
+    F_len = len(F)
+    num_total.append(F_len)
+    current_directory = os.getcwd()
+    class_charts = os.path.join(current_directory, "class_charts")
+    if not os.path.exists(class_charts):
+        os.makedirs(class_charts)
+    # bar chart of labs
+    grade_letter = ['A', 'B', 'C', 'D', 'F']
+    y_amount = num_total
+    value = [int(float(num)) for num in y_amount]
+    y_pos = np.arange(len(grade_letter))
+    plt.bar(grade_letter, value)
+    plt.xticks(y_pos, grade_letter)
+    plt.ylabel('Count')
+    plt.xlabel('Grade')
+    plt.title('Class letter grade')
+    plt.savefig("class_charts")
+    print('Lab Bar Chart Saved')
+    plt.show()
+    plt.clf()
+
+
+
+
     # C:\Users\15-aq267cl\OneDrive\Documents\GitHub\CSCE110-Final-Project/grades.csv
-menu()
+    menu()
 
 """  
 l = 477.5  79.6  19.9
